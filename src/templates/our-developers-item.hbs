@@ -1,0 +1,55 @@
+<li class="our-developers-list__item">
+  <picture>
+    <source
+      srcset="{{image.desktop.1x}} 1x, {{image.desktop.2x}} 2x, {{image.desktop.3x}} 3x"
+      media="(min-width: 1200px)"
+    />
+    <source
+      srcset="{{image.tablet.1x}} 1x, {{image.tablet.2x}} 2x, {{image.tablet.3x}} 3x"
+      media="(min-width: 768px)"
+    />
+    <source
+      srcset="{{image.mobile.1x}} 1x, {{image.mobile.2x}} 2x, {{image.mobile.3x}} 3x"
+      media="(max-width: 767px)"
+    />
+    <img
+      class="our-developers-list__img"
+      src="{{image.mobile.1x}}"
+      alt="developer {{name}}"
+    />
+  </picture>
+
+  <p class="our-developers-list__text">{{name}}</p>
+  <h4 class="our-developers-list__title">{{position}}</h4>
+
+  <ul class="our-developers-svg-list">
+    <li class="our-developers-svg-list__item">
+      <a class="our-developers-svg-list__link" href="{{socials.instagram}}">
+        <svg width="20" height="20">
+          <use href="./images/symboldefs.svg#instagram"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="our-developers-svg-list__item">
+      <a class="our-developers-svg-list__link" href="{{socials.twitter}}">
+        <svg width="20" height="20">
+          <use href="./images/symboldefs.svg#twitter"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="our-developers-svg-list__item">
+      <a class="our-developers-svg-list__link" href="{{socials.facebook}}">
+        <svg width="20" height="20">
+          <use href="./images/symboldefs.svg#facebook"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="our-developers-svg-list__item">
+      <a class="our-developers-svg-list__link" href="{{socials.linkedin}}">
+        <svg width="20" height="20">
+          <use href="./images/symboldefs.svg#linkedin"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</li>
