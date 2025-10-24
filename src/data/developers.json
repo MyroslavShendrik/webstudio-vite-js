@@ -1,0 +1,112 @@
+{
+  "developers": [
+    {
+      "name": "Ігор Дем'яненко",
+      "position": "Product Designer",
+      "image": {
+        "desktop": {
+          "1x": "./images/igor-desktop-1x.jpg",
+          "2x": "./images/igor-desktop-2x.jpg",
+          "3x": "./images/igor-desktop-3x.jpg"
+        },
+        "tablet": {
+          "1x": "./images/igor-tablet-1x.jpg",
+          "2x": "./images/igor-tablet-2x.jpg",
+          "3x": "./images/igor-tablet-3x.jpg"
+        },
+        "mobile": {
+          "1x": "./images/igor-mobile-1x.jpg",
+          "2x": "./images/igor-mobile-2x.jpg",
+          "3x": "./images/igor-mobile-3x.jpg"
+        }
+      },
+      "socials": {
+        "instagram": "#",
+        "twitter": "#",
+        "facebook": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "name": "Ольга Рєпіна",
+      "position": "Frontend Developer",
+      "image": {
+        "desktop": {
+          "1x": "./images/olga-desktop-1x.jpg",
+          "2x": "./images/olga-desktop-2x.jpg",
+          "3x": "./images/olga-desktop-3x.jpg"
+        },
+        "tablet": {
+          "1x": "./images/olga-tablet-1x.jpg",
+          "2x": "./images/olga-tablet-2x.jpg",
+          "3x": "./images/olga-tablet-3x.jpg"
+        },
+        "mobile": {
+          "1x": "./images/olga-mobile-1x.jpg",
+          "2x": "./images/olga-mobile-2x.jpg",
+          "3x": "./images/olga-mobile-3x.jpg"
+        }
+      },
+      "socials": {
+        "instagram": "#",
+        "twitter": "#",
+        "facebook": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "name": "Микола Тарасов",
+      "position": "Marketing",
+      "image": {
+        "desktop": {
+          "1x": "./images/mykola-desktop-1x.jpg",
+          "2x": "./images/mykola-desktop-2x.jpg",
+          "3x": "./images/mykola-desktop-3x.jpg"
+        },
+        "tablet": {
+          "1x": "./images/mykola-tablet-1x.jpg",
+          "2x": "./images/mykola-tablet-2x.jpg",
+          "3x": "./images/mykola-tablet-3x.jpg"
+        },
+        "mobile": {
+          "1x": "./images/mykola-mobile-1x.jpg",
+          "2x": "./images/mykola-mobile-2x.jpg",
+          "3x": "./images/mykola-mobile-3x.jpg"
+        }
+      },
+      "socials": {
+        "instagram": "#",
+        "twitter": "#",
+        "facebook": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "name": "Михайло Єрмаков",
+      "position": "UI Designer",
+      "image": {
+        "desktop": {
+          "1x": "./images/muhailo-desktop-1x.jpg",
+          "2x": "./images/muhailo-desktop-2x.jpg",
+          "3x": "./images/muhailo-desktop-3x.jpg"
+        },
+        "tablet": {
+          "1x": "./images/muhailo-tablet-1x.jpg",
+          "2x": "./images/muhailo-tablet-2x.jpg",
+          "3x": "./images/muhailo-tablet-3x.jpg"
+        },
+        "mobile": {
+          "1x": "./images/muhailo-mobile-1x.jpg",
+          "2x": "./images/muhailo-mobile-2x.jpg",
+          "3x": "./images/muhailo-mobile-3x.jpg"
+        }
+      },
+      "socials": {
+        "instagram": "#",
+        "twitter": "#",
+        "facebook": "#",
+        "linkedin": "#"
+      }
+    }
+  ]
+}
