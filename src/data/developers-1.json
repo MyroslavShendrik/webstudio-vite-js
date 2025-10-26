@@ -4,14 +4,14 @@
     "position": "Product Designer",
     "images": {
       "desktop": [
-        "./images/igor-desktop-1x.jpg",
-        "./images/igor-desktop-2x.jpg",
-        "./images/igor-desktop-3x.jpg"
+        "../images/igor-desktop-1x.jpg",
+        "../images/igor-desktop-2x.jpg",
+        "../images/igor-desktop-3x.jpg"
       ],
       "tablet": [
-        "./images/igor-tablet-1x.jpg",
-        "./images/igor-tablet-2x.jpg",
-        "./images/igor-tablet-3x.jpg"
+        "../images/igor-tablet-1x.jpg",
+        "../images/igor-tablet-2x.jpg",
+        "../images/igor-tablet-3x.jpg"
       ],
       "mobile": [
         "./images/igor-mobile-1x.jpg",

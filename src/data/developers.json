@@ -10,9 +10,9 @@
           "3x": "./images/igor-desktop-3x.jpg"
         },
         "tablet": {
-          "1x": "../images/igor-tablet-1x.jpg",
-          "2x": "../images/igor-tablet-2x.jpg",
-          "3x": "../images/igor-tablet-3x.jpg"
+          "1x": "./images/igor-tablet-1x.jpg",
+          "2x": "./images/igor-tablet-2x.jpg",
+          "3x": "./images/igor-tablet-3x.jpg"
         },
         "mobile": {
           "1x": "./images/igor-mobile-1x.jpg",
