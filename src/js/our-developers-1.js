@@ -1,7 +1,10 @@
+import Handlebars from "handlebars";
 console.log("Будуємо розмітку списку розробників");
 const developersList = document.querySelector(".our-developers-list");
 import developersData from "../data/developers-1.json";
+import developerTemplate from "../templates/our-developers-item-1.hbs?raw";
 console.log("developersData:",developersData);
+
 // const dataDeveloperList = [
 //   {
 //     name: "Ігор Дем'яненко",
@@ -117,73 +120,81 @@ console.log("developersData:",developersData);
 //   },
 // // ]; //! це масив об'єктів!
 // console.log("dataDeveloperList", dataDeveloperList);
-const markup = developersData.map(
-  (developer) =>
-    `
-<li class="our-developers-list__item">
-              <picture>
-                <source
-                srcset="
-                ${developer.images.desktop[0]} 1x,
-                ${developer.images.desktop[1]} 2x,
-                ${developer.images.desktop[2]} 3x
-                "
-                  media="(min-width: 1200px)"
-                />
-                <source
-                  srcset="
-                ${developer.images.tablet[0]} 1x,
-                ${developer.images.tablet[1]} 2x,
-                ${developer.images.tablet[2]} 3x
-                  "
-                  media="(min-width: 768px)"
-                />
-                <source
-                  srcset="
-                ${developer.images.mobile[0]} 1x,
-                ${developer.images.mobile[1]} 2x,
-                ${developer.images.mobile[2]} 3x
-                "
-                 mobile media="(min-width: 480px)"
-                />
-                <img
-                  class="our-developers-list__img"
-                  src="${developer.images.default}"
-                  alt="${developer.name}"
-                />
-              </picture>
+// const markup = developersData.map(
+//   (developer) =>
+//     `
+// <li class="our-developers-list__item">
+//               <picture>
+//                 <source
+//                 srcset="
+//                 ${developer.images.desktop[0]} 1x,
+//                 ${developer.images.desktop[1]} 2x,
+//                 ${developer.images.desktop[2]} 3x
+//                 "
+//                   media="(min-width: 1200px)"
+//                 />
+//                 <source
+//                   srcset="
+//                 ${developer.images.tablet[0]} 1x,
+//                 ${developer.images.tablet[1]} 2x,
+//                 ${developer.images.tablet[2]} 3x
+//                   "
+//                   media="(min-width: 768px)"
+//                 />
+//                 <source
+//                   srcset="
+//                 ${developer.images.mobile[0]} 1x,
+//                 ${developer.images.mobile[1]} 2x,
+//                 ${developer.images.mobile[2]} 3x
+//                 "
+//                  mobile media="(min-width: 480px)"
+//                 />
+//                 <img
+//                   class="our-developers-list__img"
+//                   src="${developer.images.default}"
+//                   alt="${developer.name}"
+//                 />
+//               </picture>
 
-              <p class="our-developers-list__text">${developer.name}</p>
-              <h4 class="our-developers-list__title">${developer.position}</h4>
-              <ul class="our-developers-svg-list">
-                <li class="our-developers-svg-list__item">
-                  <a class="our-developers-svg-list__link" href="#"
-                    ><svg width="20" height="20">
-                      <use href="${developer.socials[0]}"></use></svg
-                  ></a>
-                </li>
-                <li class="our-developers-svg-list__item">
-                  <a class="our-developers-svg-list__link" href="#"
-                    ><svg width="20" height="20">
-                      <use href="${developer.socials[1]}"></use></svg
-                  ></a>
-                </li>
-                <li class="our-developers-svg-list__item">
-                  <a class="our-developers-svg-list__link" href="#"
-                    ><svg width="20" height="20">
-                      <use href="${developer.socials[2]}"></use></svg
-                  ></a>
-                </li>
-                <li class="our-developers-svg-list__item">
-                  <a class="our-developers-svg-list__link" href="#"
-                    ><svg width="20" height="20">
-                      <use href="${developer.socials[3]}"></use></svg
-                  ></a>
-                </li>
-              </ul>
-            </li>
-`
-).join("");
+//               <p class="our-developers-list__text">${developer.name}</p>
+//               <h4 class="our-developers-list__title">${developer.position}</h4>
+//               <ul class="our-developers-svg-list">
+//                 <li class="our-developers-svg-list__item">
+//                   <a class="our-developers-svg-list__link" href="#"
+//                     ><svg width="20" height="20">
+//                       <use href="${developer.socials[0]}"></use></svg
+//                   ></a>
+//                 </li>
+//                 <li class="our-developers-svg-list__item">
+//                   <a class="our-developers-svg-list__link" href="#"
+//                     ><svg width="20" height="20">
+//                       <use href="${developer.socials[1]}"></use></svg
+//                   ></a>
+//                 </li>
+//                 <li class="our-developers-svg-list__item">
+//                   <a class="our-developers-svg-list__link" href="#"
+//                     ><svg width="20" height="20">
+//                       <use href="${developer.socials[2]}"></use></svg
+//                   ></a>
+//                 </li>
+//                 <li class="our-developers-svg-list__item">
+//                   <a class="our-developers-svg-list__link" href="#"
+//                     ><svg width="20" height="20">
+//                       <use href="${developer.socials[3]}"></use></svg
+//                   ></a>
+//                 </li>
+//               </ul>
+//             </li>
+// `
+// ).join("");
 
-// developersList.innerHTML = markup;
-developersList.insertAdjacentHTML("beforeend", markup);
+// // developersList.innerHTML = markup;
+// developersList.insertAdjacentHTML("beforeend", markup);
+const template = Handlebars.compile(developerTemplate);
+
+const html = developersData
+  .map(dev => template(dev))
+  .join("");
+
+developersList.innerHTML = html;
+
