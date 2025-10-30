@@ -1,0 +1,10 @@
+{
+  "companies": [
+    { "id": "company1", "width": 41, "height": 46 },
+    { "id": "company2", "width": 41, "height": 46 },
+    { "id": "company3", "width": 41, "height": 46 },
+    { "id": "company5", "width": 84, "height": 40 },
+    { "id": "company6", "width": 62, "height": 45 },
+    { "id": "company4", "width": 93, "height": 43 }
+  ]
+}

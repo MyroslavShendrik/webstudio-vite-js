@@ -5,6 +5,13 @@ import developersData from "../data/developers-1.json";
 import developerTemplate from "../templates/our-developers-item-1.hbs?raw";
 console.log("developersData:",developersData);
 
+const template = Handlebars.compile(developerTemplate);
+
+const html = developersData
+  .map(dev => template(dev))
+  .join("");
+
+developersList.innerHTML = html;
 // const dataDeveloperList = [
 //   {
 //     name: "Ігор Дем'яненко",
@@ -190,11 +197,5 @@ console.log("developersData:",developersData);
 
 // // developersList.innerHTML = markup;
 // developersList.insertAdjacentHTML("beforeend", markup);
-const template = Handlebars.compile(developerTemplate);
 
-const html = developersData
-  .map(dev => template(dev))
-  .join("");
-
-developersList.innerHTML = html;
 

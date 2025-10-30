@@ -1,0 +1,11 @@
+{{#each address}}
+  <li class="footer-address-list__item {{class}}">
+    {{#if isLink}}
+      <a class="footer-address-list__link" href="{{href}}">
+        {{text}}
+      </a>
+    {{else}}
+      {{text}}
+    {{/if}}
+  </li>
+{{/each}}
