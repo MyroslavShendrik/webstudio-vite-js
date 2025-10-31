@@ -6,4 +6,5 @@ const portfolioList = document.querySelector(".portfolio-list");
 const template = Handlebars.compile(portfolioTemplate);
 
 const markup = portfolioData.map(item => template(item)).join('');
+
 portfolioList.innerHTML = markup;
