@@ -47,30 +47,11 @@ import iconTwitter from "../images/symboldefs.svg#twitter";
 import iconFacebook from "../images/symboldefs.svg#facebook";
 import iconLinkedin from "../images/symboldefs.svg#linkedin";
 
+//!✅ Рішення-3: з new URL(...)(динамічний шлях без явного import)
+new URL("../images/symboldefs.svg#instagram", import.meta.url).href;
+
 //! Дані для списку з масиву об'єктів (ПРИКЛАД з різними Рішеннями):
 let dataDevelopersList = [
-  {
-    name: "Ігор Дем'яненко",
-    position: "Product Designer",
-    images: {
-      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
-      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
-      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
-      default: igorMobile1x,
-    },
-    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
-  },
-  {
-    name: "Ігор Дем'яненко",
-    position: "Product Designer",
-    images: {
-      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
-      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
-      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
-      default: igorMobile1x,
-    },
-    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
-  },
   {
     name: "Ігор Дем'яненко",
     position: "Product Designer",
@@ -92,11 +73,45 @@ let dataDevelopersList = [
       ],
       default: imgUrl("../images/igor-mobile-1x.jpg"), //!❌ Рішення-1:
     },
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
+  },
+  {
+    name: "Ігор Дем'яненко",
+    position: "Product Designer",
+    images: {
+      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
+      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
+      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
+      default: igorMobile1x,
+    },
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
+  },
+  {
+    name: "Ігор Дем'яненко",
+    position: "Product Designer",
+    images: {
+      desktop: [
+        new URL("../images/igor-desktop-1x.jpg", import.meta.url).href,
+        new URL("../images/igor-desktop-2x.jpg", import.meta.url).href,
+        new URL("../images/igor-desktop-3x.jpg", import.meta.url).href,
+      ],
+      tablet: [
+        new URL("../images/igor-tablet-1x.jpg", import.meta.url).href,
+        new URL("../images/igor-tablet-2x.jpg", import.meta.url).href,
+        new URL("../images/igor-tablet-3x.jpg", import.meta.url).href,
+      ],
+      mobile: [
+        new URL("../images/igor-mobile-1x.jpg", import.meta.url).href,
+        new URL("../images/igor-mobile-2x.jpg", import.meta.url).href,
+        new URL("../images/igor-mobile-3x.jpg", import.meta.url).href,
+      ],
+      default:  new URL("../images/igor-mobile-1x.jpg", import.meta.url).href,
+    },
     icons: [
-        imgUrl("../images/symboldefs.svg#instagram"),
-        imgUrl("../images/symboldefs.svg#twitter"),
-        imgUrl("../images/symboldefs.svg#facebook"),
-        imgUrl("../images/symboldefs.svg#linkedin")
+      new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
+      new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
+      new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
+      new URL("../images/symboldefs.svg#linkedin", import.meta.url).href,
     ],
   },
   {
