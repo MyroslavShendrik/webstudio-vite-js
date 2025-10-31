@@ -126,6 +126,8 @@ let dataDevelopersList = [
     icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
   },
 ];
+const JSONDataDevelopersList = JSON.stringify(dataDevelopersList);
+console.log("JSONDataDevelopersList:",JSONDataDevelopersList); 
 //todo: ++++++++++++++++++++++++ Розмітка без Handlebars ++++++++++++++++++++++++
 const markup = dataDevelopersList
   .map(
