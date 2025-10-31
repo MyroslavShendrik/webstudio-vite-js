@@ -3,6 +3,34 @@ console.error('Рендеримо список розробників в сек�
 //! Знаходимо елемент в якому рендерим список розробників
 const developersList = document.querySelector(".our-developers-list");
 
+//! ❌ ---------------------------------- Рішення-1: ----------------------------------
+//!❌ Рішення-1: з створенням функції з new URL(...)(динамічний шлях без явного import):
+const imgUrl = (relPath) => new URL(relPath, import.meta.url).href;
+// function imgUrl(relPath) {
+//     return new URL(relPath, import.meta.url).href;
+// };
+//!❌ Рішення-1: Один з об'єктів для прикладу синтаксису:
+const images = {
+  desktop: [
+    imgUrl("../images/igor-desktop-1x.jpg"), //!❌ Рішення-1:
+    imgUrl("../images/igor-desktop-2x.jpg"), //!❌ Рішення-1:
+    imgUrl("../images/igor-desktop-3x.jpg"), //!❌ Рішення-1:
+  ],
+  tablet: [
+    imgUrl("../images/igor-tablet-1x.jpg"), //!❌ Рішення-1:
+    imgUrl("../images/igor-tablet-2x.jpg"), //!❌ Рішення-1:
+    imgUrl("../images/igor-tablet-3x.jpg"), //!❌ Рішення-1:
+  ],
+  mobile: [
+    imgUrl("../images/igor-mobile-1x.jpg"), //!❌ Рішення-1:
+    imgUrl("../images/igor-mobile-2x.jpg"), //!❌ Рішення-1:
+    imgUrl("../images/igor-mobile-3x.jpg"), //!❌ Рішення-1:
+  ],
+  default: imgUrl("../images/igor-mobile-1x.jpg"), //!❌ Рішення-1:
+};
+console.log("images:", images); //!
+//! ❌ __________________________________ Рішення-1: __________________________________
+
 //!✅ Рішення-2:
 import igorDesktop1x from "../images/igor-desktop-1x.jpg";
 import igorDesktop2x from "../images/igor-desktop-2x.jpg";
@@ -30,9 +58,9 @@ let dataDevelopersList = [
       mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
       default: igorMobile1x,
     },
-    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
   },
-   {
+  {
     name: "Ігор Дем'яненко",
     position: "Product Designer",
     images: {
@@ -41,9 +69,37 @@ let dataDevelopersList = [
       mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
       default: igorMobile1x,
     },
-    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
   },
-   {
+  {
+    name: "Ігор Дем'яненко",
+    position: "Product Designer",
+    images: {
+      desktop: [
+        imgUrl("../images/igor-desktop-1x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-desktop-2x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-desktop-3x.jpg"), //!❌ Рішення-1:
+      ],
+      tablet: [
+        imgUrl("../images/igor-tablet-1x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-tablet-2x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-tablet-3x.jpg"), //!❌ Рішення-1:
+      ],
+      mobile: [
+        imgUrl("../images/igor-mobile-1x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-mobile-2x.jpg"), //!❌ Рішення-1:
+        imgUrl("../images/igor-mobile-3x.jpg"), //!❌ Рішення-1:
+      ],
+      default: imgUrl("../images/igor-mobile-1x.jpg"), //!❌ Рішення-1:
+    },
+    icons: [
+        imgUrl("../images/symboldefs.svg#instagram"),
+        imgUrl("../images/symboldefs.svg#twitter"),
+        imgUrl("../images/symboldefs.svg#facebook"),
+        imgUrl("../images/symboldefs.svg#linkedin")
+    ],
+  },
+  {
     name: "Ігор Дем'яненко",
     position: "Product Designer",
     images: {
@@ -52,24 +108,14 @@ let dataDevelopersList = [
       mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
       default: igorMobile1x,
     },
-    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
   },
-   {
-    name: "Ігор Дем'яненко",
-    position: "Product Designer",
-    images: {
-      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
-      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
-      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
-      default: igorMobile1x,
-    },
-    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
-  }
 ];
 //todo: ++++++++++++++++++++++++ Розмітка без Handlebars ++++++++++++++++++++++++
 const markup = dataDevelopersList
-    .map(item =>
-        `
+  .map(
+    (item) =>
+      `
             <li class="our-developers-list__item">
                 <picture>
                     <source
@@ -137,8 +183,8 @@ const markup = dataDevelopersList
                 </ul>
             </li>
         `
-    )
-    .join("");
+  )
+  .join("");
 
 // ! 6️⃣Генеруємо HTML-розмітку для списку всіх розробників
 console.log("6️⃣markup:", markup); //!
