@@ -1,5 +1,8 @@
 console.error('Рендеримо список розробників в секції "Наша команда"');
+
+//! Знаходимо елемент в якому рендерим список розробників
 const developersList = document.querySelector(".our-developers-list");
+
 //!✅ Рішення-2:
 import igorDesktop1x from "../images/igor-desktop-1x.jpg";
 import igorDesktop2x from "../images/igor-desktop-2x.jpg";
@@ -12,9 +15,9 @@ import igorMobile2x from "../images/igor-mobile-2x.jpg";
 import igorMobile3x from "../images/igor-mobile-3x.jpg";
 
 import iconInstagram from "../images/symboldefs.svg#instagram";
-import iconTwiter from "../images/symboldefs.svg#twitter";
+import iconTwitter from "../images/symboldefs.svg#twitter";
 import iconFacebook from "../images/symboldefs.svg#facebook";
-import iconLinkedin from   "../images/symboldefs.svg#linkedin";
+import iconLinkedin from "../images/symboldefs.svg#linkedin";
 
 //! Дані для списку з масиву об'єктів (ПРИКЛАД з різними Рішеннями):
 let dataDevelopersList = [
@@ -27,43 +30,9 @@ let dataDevelopersList = [
       mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
       default: igorMobile1x,
     },
-    icons: [iconInstagram, iconTwiter, iconFacebook, iconLinkedin],
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
   },
-  {
-    name: "Ігор Дем'яненко",
-    position: "Product Designer",
-    images: {
-      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
-      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
-      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
-      default: igorMobile1x,
-    },
-    icons: [iconInstagram, iconTwiter, iconFacebook, iconLinkedin],
-  },
-  {
-    name: "Ігор Дем'яненко",
-    position: "Product Designer",
-    images: {
-      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
-      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
-      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
-      default: igorMobile1x,
-    },
-    icons: [iconInstagram, iconTwiter, iconFacebook, iconLinkedin],
-  },
-  {
-    name: "Ігор Дем'яненко",
-    position: "Product Designer",
-    images: {
-      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
-      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
-      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
-      default: igorMobile1x,
-    },
-    icons: [iconInstagram, iconTwiter, iconFacebook, iconLinkedin],
-  }
 ];
-
 //todo: ++++++++++++++++++++++++ Розмітка без Handlebars ++++++++++++++++++++++++
 const markup = dataDevelopersList
     .map(item =>
@@ -128,7 +97,7 @@ const markup = dataDevelopersList
                     <li class="our-developers-svg-list__item">
                         <a class="our-developers-svg-list__link" href="#">
                             <svg width="20" height="20">
-                                <use href=".${item.icons[3]}"></use>
+                                <use href="${item.icons[3]}"></use>
                             </svg>
                         </a>
                     </li>
@@ -145,18 +114,4 @@ console.log("6️⃣markup:", markup); //!
 // developersList.innerHTML = ""; //todo: var.1
 // developersList.insertAdjacentHTML("beforeend", markup); //todo: var.1
 developersList.innerHTML = markup; //todo: var.2
-
-
-
-// import Handlebars from "handlebars";
-// import developersData from "../data/developers-1.json";
-// import developerTemplate from "../templates/our-developers-item-1.hbs?raw";
-// console.log("developersData:",developersData);
-
-// const template = Handlebars.compile(developerTemplate);
-
-// const html = developersData
-//   .map(dev => template(dev))
-//   .join("");
-
-// developersList.innerHTML = html;
+console.log("markup:", markup);
