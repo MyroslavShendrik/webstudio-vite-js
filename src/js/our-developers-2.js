@@ -32,6 +32,39 @@ let dataDevelopersList = [
     },
     icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
   },
+   {
+    name: "Ігор Дем'яненко",
+    position: "Product Designer",
+    images: {
+      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
+      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
+      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
+      default: igorMobile1x,
+    },
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
+  },
+   {
+    name: "Ігор Дем'яненко",
+    position: "Product Designer",
+    images: {
+      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
+      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
+      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
+      default: igorMobile1x,
+    },
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
+  },
+   {
+    name: "Ігор Дем'яненко",
+    position: "Product Designer",
+    images: {
+      desktop: [igorDesktop1x, igorDesktop2x, igorDesktop3x],
+      tablet: [igorTablet1x, igorTablet2x, igorTablet3x],
+      mobile: [igorMobile1x, igorMobile2x, igorMobile3x],
+      default: igorMobile1x,
+    },
+    icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin]
+  }
 ];
 //todo: ++++++++++++++++++++++++ Розмітка без Handlebars ++++++++++++++++++++++++
 const markup = dataDevelopersList
@@ -114,4 +147,3 @@ console.log("6️⃣markup:", markup); //!
 // developersList.innerHTML = ""; //todo: var.1
 // developersList.insertAdjacentHTML("beforeend", markup); //todo: var.1
 developersList.innerHTML = markup; //todo: var.2
-console.log("markup:", markup);
