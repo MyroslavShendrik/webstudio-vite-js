@@ -14,7 +14,7 @@ import igorMobile3x from "../images/igor-mobile-3x.jpg";
 import iconInstagram from "../images/symboldefs.svg#instagram";
 import iconTwiter from "../images/symboldefs.svg#twitter";
 import iconFacebook from "../images/symboldefs.svg#facebook";
-import iconLinkedin from "../images/symboldefs.svg#linkedin";
+import iconLinkedin from   "../images/symboldefs.svg#linkedin";
 
 //! Дані для списку з масиву об'єктів (ПРИКЛАД з різними Рішеннями):
 let dataDevelopersList = [
