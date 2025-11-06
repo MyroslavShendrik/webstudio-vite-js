@@ -40,4 +40,11 @@ Expecting `+x.join(", ")+", got '"+(this.terminals_[k]||k)+"'":T="Parse error on
     {{/if}}
   </li>
 {{/each}}
-`,yt=document.querySelector(".footer-address-list");console.log("footerList:",yt);const Nn=St.compile(In),Rn=Nn(An);yt.innerHTML=Rn;export{St as H};
+`,yt=document.querySelector(".footer-address-list");console.log("footerList:",yt);const Nn=St.compile(In),Rn=Nn(An);yt.innerHTML=Rn;const Dn=[{id:"instagram",url:"https://instagram.com"},{id:"twitter",url:"https://twitter.com"},{id:"facebook",url:"https://facebook.com"},{id:"linkedin",url:"https://linkedin.com"}],Bn=new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg",self.location).href,Hn=document.querySelector(".follow-list");Hn.insertAdjacentHTML("beforeend",Dn.map(e=>`
+      <li class="follow-list__item">
+        <a class="follow-list__link" href="${e.url}" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20">
+            <use href="${Bn}#${e.id}"></use>
+          </svg>
+        </a>
+      </li>`).join(""));export{St as H};

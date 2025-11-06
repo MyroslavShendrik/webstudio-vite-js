@@ -1,4 +1,4 @@
-import{H as s}from"./footer-6de5938c.js";const t=[{text:"Усі"},{text:"Веб-сайти"},{text:"Додатки"},{text:"Дизайн"},{text:"Маркетинг"}],o={buttons:t},i=`{{#each buttons}}
+import{H as s}from"./social-list-7aafcd99.js";const t=[{text:"Усі"},{text:"Веб-сайти"},{text:"Додатки"},{text:"Дизайн"},{text:"Маркетинг"}],o={buttons:t},i=`{{#each buttons}}
   <li class="button-list__item">
     <button class="button-list__button" type="button">
       {{text}}
