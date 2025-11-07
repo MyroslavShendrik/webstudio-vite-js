@@ -1,0 +1,7 @@
+{
+  "links": [
+    { "name": "Студія", "href": "./index.html", "active": false },
+    { "name": "Портфоліо", "href": "./portfolio.html", "active": true },
+    { "name": "Контакти", "href": "./contacts.html", "active": false }
+  ]
+}
