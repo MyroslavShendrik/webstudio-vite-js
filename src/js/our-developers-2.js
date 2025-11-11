@@ -126,7 +126,7 @@ let dataDevelopersList = [
     icons: [iconInstagram, iconTwitter, iconFacebook, iconLinkedin],
   },
 ];
-//! робимо масив розробників
+//! робимо фінальний масив розробників
 dataDevelopersList = [
       {
     name: "Ігор Дем'яненко",
@@ -243,6 +243,10 @@ dataDevelopersList = [
 ]
 const JSONDataDevelopersList = JSON.stringify(dataDevelopersList);
 console.log("JSONDataDevelopersList:",JSONDataDevelopersList); 
+localStorage.setItem("dataDevelopers", JSONDataDevelopersList);
+dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+console.log("dataDevelopersList після localStorage:", dataDevelopersList); 
+
 //todo: ++++++++++++++++++++++++ Розмітка без Handlebars ++++++++++++++++++++++++
 const markup = dataDevelopersList
   .map(
