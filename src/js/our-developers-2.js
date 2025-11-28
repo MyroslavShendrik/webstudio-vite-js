@@ -126,7 +126,9 @@ console.log("Масив розробників перед localStorage:", dataDe
 //? умова: якщо localStarage пустий, то додаємо базовий об'єкт dataDevelopersList
 if(localStorage.getItem("dataDevelopers") === undefined){
 localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList));
+console.log("localStorage.getItem(dataDevelopers):",localStorage.getItem("dataDevelopers"));
 }
+console.log("localStorage.getItem(dataDevelopers):",localStorage.getItem("dataDevelopers"));
 // localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList));
 console.log("Дані збережено у localStorage");
 
