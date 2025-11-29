@@ -124,7 +124,7 @@ console.log("Масив розробників перед localStorage:", dataDe
 
 //! Зберігаємо у localStorage dataDevelopersList
 //? умова: якщо localStarage пустий, то додаємо базовий об'єкт dataDevelopersList
-if(localStorage.getItem("dataDevelopers") === undefined){
+if(localStorage.getItem("dataDevelopers") === null){
 localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList));
 console.log("localStorage.getItem(dataDevelopers):",localStorage.getItem("dataDevelopers"));
 }
@@ -133,14 +133,7 @@ console.log("localStorage.getItem(dataDevelopers):",localStorage.getItem("dataDe
 console.log("Дані збережено у localStorage");
 
 //! забираємо дані в dataDevelopersList з localStorage
-// const storedData = localStorage.getItem("dataDevelopers");
-// if (!storedData) {
-//   console.error("Помилка: localStorage порожній!");
-// } else {
-//   console.log("Дані з localStorage отримано успішно:", JSON.parse(storedData));
-//   dataDevelopersList = JSON.parse(storedData);
-// }
-dataDevelopersList = localStorage.getItem("dataDevelopers");
+dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 console.log("dataDevelopersList:",dataDevelopersList);
 // Генеруємо HTML
 const markup = dataDevelopersList
