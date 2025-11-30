@@ -47,7 +47,7 @@ let dataDevelopersList = [
         new URL("../images/olga-desktop-3x.jpg", import.meta.url).href,
       ],
       tablet: [
-        new URL("../images/olga-tablet-1x.jpg", import.meta.url).href,
+        new URL("../images/olga-tablet-1x.jpg", import.meta.url).href, 
         new URL("../images/olga-tablet-2x.jpg", import.meta.url).href,
         new URL("../images/olga-tablet-3x.jpg", import.meta.url).href,
       ],
