@@ -23,6 +23,7 @@
     color: var(--white-color);
     background-color: var(--button-color);
 }
+
 @mixin mob($breakPoint) {
     @media screen and (min-width: $breakPoint) {
         @content;

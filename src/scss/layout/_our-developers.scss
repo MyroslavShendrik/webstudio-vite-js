@@ -6,19 +6,25 @@
  
   
 
-  .our-developers-title {
+  &-title {
     text-align: center;
     color: getColor("link");
     font-size: 28px;
     margin-bottom: 30px;
   }
 
-  &__button{
-  @include btn()
-  };
+  &__button {
+  @include btn();
+  // background-color: blue;
+  margin: 0 auto 20px;
   
+  }
+
   
-  .our-developers-list {
+
+
+  
+  &-list {  
     align-items: center;
     justify-content: center;
 
