@@ -13,6 +13,10 @@
     margin-bottom: 30px;
   }
 
+  &__button{
+  @include btn()
+  };
+  
   
   .our-developers-list {
     align-items: center;
