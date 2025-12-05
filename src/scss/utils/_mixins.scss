@@ -12,6 +12,16 @@
     height: 50px;
     display: block;
     text-align: center;
+    border-radius: 4px;
+    border: none;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: .06em;
+    cursor: pointer;
+    color: var(--white-color);
+    background-color: var(--button-color);
 }
 @mixin mob($breakPoint) {
     @media screen and (min-width: $breakPoint) {
