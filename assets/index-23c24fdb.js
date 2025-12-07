@@ -57,7 +57,7 @@ const g=t.compile(f),l=s.map(e=>g(e)).join("");console.log(" markup:",l);w.inner
 //! 2. Перетворити дані, які ми взяли з LocalStorage на масив об'єктів
 //! 3. Записати це в якусь зміну
 let h=JSON.parse(localStorage.getItem("dataDevelopers"));console.log("dataDevelopersList:",h);//! 4 Пошук всіх необхідних елементів
-const m=document.querySelector(".our-developers-list");console.log("developersList:",m);const i=document.querySelector(".our-developers__button");console.log("addDeveloperButton:",i);//! 5 Змінні для поточної роботи
+const m=document.querySelector(".our-developers-list");console.log("developersList:",m);const i=document.querySelector(".our-developers__button");console.log("addDeveloperButton:",i);//! 5 Змінні для по3точної роботи
 //! 6 надати слухачів подій
 i.addEventListener("click",b);//! 7 блок функцій 
 function b(){console.log("додаємо нового розробника")}const u=[{name:"Студія",href:"./index.html",active:!0},{name:"Портфоліо",href:"./portfolio.html",active:!1},{name:"Контакти",href:"./contacts.html",active:!1}],p={links:u},v=`{{#each links}}
