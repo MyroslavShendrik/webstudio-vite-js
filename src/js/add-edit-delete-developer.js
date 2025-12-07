@@ -13,7 +13,7 @@ const developersList = document.querySelector(".our-developers-list");
 console.log("developersList:",developersList);
 const addDeveloperButton = document.querySelector(".our-developers__button");
 console.log("addDeveloperButton:",addDeveloperButton);
-//! 5 Змінні для поточної роботи
+//! 5 Змінні для по3точної роботи
 //! 6 надати слухачів подій
 addDeveloperButton.addEventListener("click", addDeveloper);
 //! 7 блок функцій 
