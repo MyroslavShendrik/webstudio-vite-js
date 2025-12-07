@@ -304,14 +304,16 @@
       </div>
     </div>
      <!--? модальне вікно для додавання/редагування картки -->
-     <div class="backdrop is-hidden" data-modal-add-edit-developer>
-      <div class="modal-add-edit-developer">
- <form class="form-add-edit-developer" >
-  <h2 class="form-add-edit-developer__title">Додати розробника</h2>
-          <input name="firstName" placeholder="Ім'я" required />
-            <input name="firstName" placeholder="Ім'я" required />
 
+    <div class="backdrop is-hidden" data-modal-add-edit-developer>
+    <div class="modal-add-edit-developer">
+   <form class="form-add-edit-developer" >
+  <h2 class="form-add-edit-developer__title">Додати розробника</h2>
+          <input class="form-add-edit-developer__input-developer-name" type="text" name="developerName"  placeholder="Ім'я"  required />
+          <input class="form-add-edit-developer__input-developer-position" type="text" name="developerPosition" placeholder="Посада" required />
  </form>
+ <button class="modal-add-edit-developer__button-add">Додати</button>
+ <button class="modal-add-edit-developer__button-cancel">Скасувати</button>
       </div>
      </div>
 
