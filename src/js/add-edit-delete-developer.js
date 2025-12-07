@@ -10,7 +10,13 @@ let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 console.log("dataDevelopersList:",dataDevelopersList);
 //! 4 Пошук всіх необхідних елементів
 const developersList = document.querySelector(".our-developers-list");
-const addDeveloperButton = documet.querySelector(".our-developers__button");
+console.log("developersList:",developersList);
+const addDeveloperButton = document.querySelector(".our-developers__button");
+console.log("addDeveloperButton:",addDeveloperButton);
 //! 5 Змінні для поточної роботи
 //! 6 надати слухачів подій
+addDeveloperButton.addEventListener("click", addDeveloper);
 //! 7 блок функцій 
+function addDeveloper(){
+console.log("додаємо нового розробника")
+};
