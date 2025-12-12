@@ -21,10 +21,10 @@
 
     <!-- Main CSS -->
     
-    <script type="module" crossorigin src="/webstudio-vite-js/assets/index-1b9a5bcb.js"></script>
-    <link rel="modulepreload" crossorigin href="/webstudio-vite-js/assets/social-list-e0f63d07.js">
-    <link rel="stylesheet" href="/webstudio-vite-js/assets/social-list-e42698e2.css">
-    <link rel="stylesheet" href="/webstudio-vite-js/assets/index-e0ec2bf9.css">
+    <script type="module" crossorigin src="/webstudio-vite-js/assets/index-7b10626f.js"></script>
+    <link rel="modulepreload" crossorigin href="/webstudio-vite-js/assets/social-list-2cb85629.js">
+    <link rel="stylesheet" href="/webstudio-vite-js/assets/social-list-9f4421cd.css">
+    <link rel="stylesheet" href="/webstudio-vite-js/assets/index-d5b4ffa8.css">
   </head>
 
   <body>
@@ -35,8 +35,7 @@
         </a>
 
         <nav class="header-nav">
-          <ul class="header-list">
-          </ul>
+          <ul class="header-list"></ul>
         </nav>
 
         <ul class="contacts-list">
@@ -138,8 +137,7 @@
       <!-- Наші плюси -->
       <section class="our-pluses">
         <div class="container">
-          <ul class="our-pluses-list">
-          </ul>
+          <ul class="our-pluses-list"></ul>
         </div>
       </section>
 
@@ -147,8 +145,7 @@
       <section class="our-work">
         <div class="container">
           <h3 class="our-work-title">Чим ми займаємося</h3>
-          <ul class="our-work-list">
-          </ul>
+          <ul class="our-work-list"></ul>
         </div>
       </section>
 
@@ -157,8 +154,7 @@
         <div class="container">
           <h3 class="our-developers-title">Наша команда</h3>
           <button class="our-developers__button">Додати розробника</button>
-          <ul class="our-developers-list">
-          </ul>
+          <ul class="our-developers-list"></ul>
         </div>
       </section>
 
@@ -166,8 +162,7 @@
       <section class="company">
         <div class="container">
           <h2 class="company-title">Постійні клієнти</h2>
-          <ul class="company-list">
-          </ul>
+          <ul class="company-list"></ul>
         </div>
       </section>
     </main>
@@ -183,14 +178,12 @@
               ></a
             >
             <address class="footer-address">
-              <ul class="footer-address-list">
-              </ul>
+              <ul class="footer-address-list"></ul>
             </address>
           </div>
           <div class="follow">
             <h2 class="follow-title">ПРИЄДНУЙТЕСЬ</h2>
-            <ul class="follow-list">
-            </ul>
+            <ul class="follow-list"></ul>
           </div>
         </div>
 
@@ -307,29 +300,43 @@
         </form>
       </div>
     </div>
-     <!--? модальне вікно для додавання/редагування картки -->
-
+    
+    <!--? модальне вікно для додавання/редагування картки -->
     <div class="backdrop is-hidden" data-modal-add-edit-developer>
-    <div class="modal-add-edit-developer">
-   <form class="form-add-edit-developer" >
-  <h2 class="form-add-edit-developer__title"></h2>
-          <input class="form-add-edit-developer__input-developer-name" type="text" name="developerName"  placeholder="Ім'я"  required />
-          <input class="form-add-edit-developer__input-developer-position" type="text" name="developerPosition" placeholder="Посада" required />
- </form>
- <button class="modal-add-edit-developer__button-add">Додати</button>
- <button class="modal-add-edit-developer__button-cancel">Скасувати</button>
+      <div class="modal-add-edit-developer">
+        <form class="form-add-edit-developer">
+          <h2 class="form-add-edit-developer__title"></h2>
+          <input
+            class="form-add-edit-developer__input-developer-name"
+            type="text"
+            name="developerName"
+            placeholder="Ім'я"
+            required
+          />
+          <input
+            class="form-add-edit-developer__input-developer-position"
+            type="text"
+            name="developerPosition"
+            placeholder="Посада"
+            required
+          />
+        </form>
+        <button class="modal-add-edit-developer__button-add">Додати</button>
+        <button class="modal-add-edit-developer__button-cancel">
+          Скасувати
+        </button>
       </div>
-     </div>
+    </div>
 
     <!-- Scripts -->
-     
+    
     
     
     <!-- <script type="module" src="./js/our-developers.js"></script> -->
     <!-- <script type="module" src="./js/our-developers-1.js"></script> -->
-     <!--! Рендерить список розробників в секції "Наша команда" -->
+    <!--! Рендерить список розробників в секції "Наша команда" -->
     
-    
+
     <!--! Додає/Редагує/Видаляє розробників в секції "Наша команда" -->
     <!--! Теми: Делегування подій. Node.js та npm. Бандлер Vite. Шаблонізація з Handlebars. JSON.  Локальне сховище (localStorage). -->
     
@@ -337,8 +344,7 @@
     
     
     
-     
-     
-
+    
+    
   </body>
 </html>
