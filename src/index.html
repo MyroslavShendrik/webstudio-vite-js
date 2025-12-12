@@ -31,8 +31,7 @@
         </a>
 
         <nav class="header-nav">
-          <ul class="header-list">
-          </ul>
+          <ul class="header-list"></ul>
         </nav>
 
         <ul class="contacts-list">
@@ -134,8 +133,7 @@
       <!-- Наші плюси -->
       <section class="our-pluses">
         <div class="container">
-          <ul class="our-pluses-list">
-          </ul>
+          <ul class="our-pluses-list"></ul>
         </div>
       </section>
 
@@ -143,8 +141,7 @@
       <section class="our-work">
         <div class="container">
           <h3 class="our-work-title">Чим ми займаємося</h3>
-          <ul class="our-work-list">
-          </ul>
+          <ul class="our-work-list"></ul>
         </div>
       </section>
 
@@ -153,8 +150,7 @@
         <div class="container">
           <h3 class="our-developers-title">Наша команда</h3>
           <button class="our-developers__button">Додати розробника</button>
-          <ul class="our-developers-list">
-          </ul>
+          <ul class="our-developers-list"></ul>
         </div>
       </section>
 
@@ -162,8 +158,7 @@
       <section class="company">
         <div class="container">
           <h2 class="company-title">Постійні клієнти</h2>
-          <ul class="company-list">
-          </ul>
+          <ul class="company-list"></ul>
         </div>
       </section>
     </main>
@@ -179,14 +174,12 @@
               ></a
             >
             <address class="footer-address">
-              <ul class="footer-address-list">
-              </ul>
+              <ul class="footer-address-list"></ul>
             </address>
           </div>
           <div class="follow">
             <h2 class="follow-title">ПРИЄДНУЙТЕСЬ</h2>
-            <ul class="follow-list">
-            </ul>
+            <ul class="follow-list"></ul>
           </div>
         </div>
 
@@ -303,29 +296,43 @@
         </form>
       </div>
     </div>
-     <!--? модальне вікно для додавання/редагування картки -->
-
+    
+    <!--? модальне вікно для додавання/редагування картки -->
     <div class="backdrop is-hidden" data-modal-add-edit-developer>
-    <div class="modal-add-edit-developer">
-   <form class="form-add-edit-developer" >
-  <h2 class="form-add-edit-developer__title"></h2>
-          <input class="form-add-edit-developer__input-developer-name" type="text" name="developerName"  placeholder="Ім'я"  required />
-          <input class="form-add-edit-developer__input-developer-position" type="text" name="developerPosition" placeholder="Посада" required />
- </form>
- <button class="modal-add-edit-developer__button-add">Додати</button>
- <button class="modal-add-edit-developer__button-cancel">Скасувати</button>
+      <div class="modal-add-edit-developer">
+        <form class="form-add-edit-developer">
+          <h2 class="form-add-edit-developer__title"></h2>
+          <input
+            class="form-add-edit-developer__input-developer-name"
+            type="text"
+            name="developerName"
+            placeholder="Ім'я"
+            required
+          />
+          <input
+            class="form-add-edit-developer__input-developer-position"
+            type="text"
+            name="developerPosition"
+            placeholder="Посада"
+            required
+          />
+        </form>
+        <button class="modal-add-edit-developer__button-add">Додати</button>
+        <button class="modal-add-edit-developer__button-cancel">
+          Скасувати
+        </button>
       </div>
-     </div>
+    </div>
 
     <!-- Scripts -->
-     <script type="module" src="./js/pluses.js" ></script>
+    <script type="module" src="./js/pluses.js"></script>
     <script type="module" src="./js/modal.js"></script>
     <script type="module" src="./js/mob-menu.js"></script>
     <!-- <script type="module" src="./js/our-developers.js"></script> -->
     <!-- <script type="module" src="./js/our-developers-1.js"></script> -->
-     <!--! Рендерить список розробників в секції "Наша команда" -->
+    <!--! Рендерить список розробників в секції "Наша команда" -->
     <script type="module" src="./js/our-developers-2.js"></script>
-    
+
     <!--! Додає/Редагує/Видаляє розробників в секції "Наша команда" -->
     <!--! Теми: Делегування подій. Node.js та npm. Бандлер Vite. Шаблонізація з Handlebars. JSON.  Локальне сховище (localStorage). -->
     <script type="module" src="./js/add-edit-delete-developer.js"></script>
@@ -333,8 +340,7 @@
     <script type="module" src="./js/header.js"></script>
     <script type="module" src="./js/footer.js"></script>
     <script type="module" src="./js/company.js"></script>
-     <script type="module" src="./js/our-work.js"></script>
-     <script type="module" src="./js/social-list.js"></script>
-
+    <script type="module" src="./js/our-work.js"></script>
+    <script type="module" src="./js/social-list.js"></script>
   </body>
 </html>
