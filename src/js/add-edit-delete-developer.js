@@ -17,17 +17,21 @@ const formTitle = document.querySelector(".form-add-edit-developer__title");
 // console.log("formTitle:",formTitle);
 const modalAddEditDeveloper = document.querySelector("[data-modal-add-edit-developer]");
 // console.log("modalAddEditDeveloper:",modalAddEditDeveloper);
+const buttonDeleteDeveloper = document.querySelector(".modal-add-edit-developer__button-delete");
+// console.log("buttonDeleteDeveloper:",buttonDeleteDeveloper);
+const formAddEditDeveloper = document.querySelector(".form-add-edit-developer");  
 //! 2.2 Змінні для поточної роботи
 //! 3 надати слухачів подій
 addDeveloperButton.addEventListener("click", addDeveloper);
+formAddEditDeveloper.addEventListener("submit", sumbitModalAddEditDeveloper);
 //! 4 блок функцій 
 function addDeveloper(){
 console.log("додаємо нового розробника")
-//! 4.1.1 заміна контенту заголовка модального вікна
-formTitle.textContent = "Додати розробника"
+//! 4.1.1 заміна контенту заголовка модального вікна, приховуємо зайві елементи
+formTitle.textContent = "Додати розробника";
+buttonDeleteDeveloper.style.display = 'none';
 //! 4.1.2 відкриття модального вікна з формою для збирання даних
 toggleModalAddEditDeveloper()
-//! 4.1.3 зібрати дані з форми по кнопці "submit" і записати ці дані в об'єкт 
 //! 4.1.4 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
 //! 4.1.5 додати цей об'єкт в масів об'єктів всіх користувачів
 //! 4.1.6 закрити модальне вікно з формою для збирання даних 
@@ -39,4 +43,20 @@ function toggleModalAddEditDeveloper(){
     console.log("відкривання/закривання модального вікна для додавання/редагування розробника");
     modalAddEditDeveloper.classList.toggle("is-hidden");
     document.body.classList.toggle("no-scroll");
+};
+//! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
+function sumbitModalAddEditDeveloper(event){
+//! блокуємо перезавантаження сторінки 
+    event.preventDefault();
+//! 4.3.1 зібрати дані з форми по кнопці "submit" і записати ці дані в об'єкт
+console.log("ДО dataDevelopersList:", dataDevelopersList);
+const developerObject = {
+name: formAddEditDeveloper.developerName.value,
+position: formAddEditDeveloper.developerPosition.value 
+};
+
+console.log("developerObject:", developerObject);
+//! 4.3.2 додаємо новий об'єкт до масиву об'єктів
+dataDevelopersList.push(developerObject);
+console.log("ПІСЛЯ  dataDevelopersList:", dataDevelopersList);
 }

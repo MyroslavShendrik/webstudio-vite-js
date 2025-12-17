@@ -70,17 +70,28 @@
   &__input-developer-position {
     margin-bottom: 20px;
   }
-}
-
-
-.modal-add-edit-developer__button-add {
-  @include btn();
+  &__button-submit{
+      @include btn();
   margin: 0 auto 15px auto;
   background-color: #9a9d23;
+  }
 }
+
+
+// .modal-add-edit-developer__button-add {
+//   @include btn();
+//   margin: 0 auto 15px auto;
+//   background-color: #9a9d23;
+// }
 
 .modal-add-edit-developer__button-cancel {
   @include btn();
   margin: 0 auto;
   background-color: #1fa01f;
+}
+.modal-add-edit-developer__button-delete{
+    @include btn();
+      margin: 0 auto 15px auto;
+    background-color: #b22222;
+    
 }

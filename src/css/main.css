@@ -348,8 +348,7 @@ body {
 .form-add-edit-developer__input-developer-position {
   margin-bottom: 20px;
 }
-
-.modal-add-edit-developer__button-add {
+.form-add-edit-developer__button-submit {
   width: 200px;
   height: 50px;
   display: block;
@@ -385,6 +384,25 @@ body {
   background-color: var(--button-color);
   margin: 0 auto;
   background-color: #1fa01f;
+}
+
+.modal-add-edit-developer__button-delete {
+  width: 200px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--button-color);
+  margin: 0 auto 15px auto;
+  background-color: #b22222;
 }
 
 .header {
