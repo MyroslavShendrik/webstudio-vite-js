@@ -322,6 +322,9 @@ body {
   font-weight: 700;
   color: #b22222;
 }
+.form-add-edit-developer__img {
+  margin: 0 auto 20px;
+}
 .form-add-edit-developer__input-developer-name, .form-add-edit-developer__input-developer-position {
   width: 100%;
   height: 40px;

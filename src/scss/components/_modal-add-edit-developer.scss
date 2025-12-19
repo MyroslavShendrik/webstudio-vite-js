@@ -36,6 +36,9 @@
     font-weight: 700;
     color: #b22222; 
   }
+  &__img{
+    margin: 0 auto 20px ;
+  }
 &__input-developer-name,
   &__input-developer-position {
     width: 100%;
@@ -75,6 +78,7 @@
   margin: 0 auto 15px auto;
   background-color: #9a9d23;
   }
+
 }
 
 
