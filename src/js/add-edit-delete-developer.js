@@ -1,3 +1,4 @@
+
 console.log(
     '%c Додаємо/Редагуємо/Видаляємо розробників в секції "Наша команда" ',
     'color: white; background-color: #D33F49',
@@ -31,11 +32,7 @@ console.log("додаємо нового розробника")
 formTitle.textContent = "Додати розробника";
 buttonDeleteDeveloper.style.display = 'none';
 //! 4.1.2 відкриття модального вікна з формою для збирання даних
-toggleModalAddEditDeveloper()
-//! 4.1.4 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
-//! 4.1.5 додати цей об'єкт в масів об'єктів всіх користувачів
-//! 4.1.6 закрити модальне вікно з формою для збирання даних 
-//! 4.1.7 зберегти змінені дані в LocalStorage
+toggleModalAddEditDeveloper() 
 };
 
 //! відкривання/закривання модального вікна для додавання/редагування розробника
@@ -47,8 +44,10 @@ function toggleModalAddEditDeveloper(){
 //! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function sumbitModalAddEditDeveloper(event){
 //! блокуємо перезавантаження сторінки 
-    event.preventDefault();
-//! 4.3.1 зібрати дані з форми по кнопці "submit" і записати ці дані в об'єкт
+    // event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
+//! 4.3.1 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
+dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+//! 4.3.2 зібрати дані з форми по кнопці "submit" і записати ці дані в об'єкт
 console.log("ДО dataDevelopersList:", dataDevelopersList);
 const developerObject = {
 name: formAddEditDeveloper.developerName.value,
@@ -80,7 +79,11 @@ images: {
 };
 
 console.log("developerObject:", developerObject);
-//! 4.3.2 додаємо новий об'єкт до масиву об'єктів
+//! 4.3.3 додаємо новий об'єкт до масиву об'єктів
 dataDevelopersList.push(developerObject);
 console.log("ПІСЛЯ  dataDevelopersList:", dataDevelopersList);
+//! 4.3.4 зберегти змінені дані в LocalStorage
+  localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
+//! 4.3.5 закрити модальне вікно з формою для збирання даних
+ toggleModalAddEditDeveloper()
 }
