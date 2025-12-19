@@ -303,6 +303,10 @@ body {
   transform: translate(-50%, 50%) scale(0.5);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .modal-add-edit-developer {
   position: relative;
   top: 50%;
@@ -1428,6 +1432,10 @@ body {
 .backdrop.is-hidden .modal {
   opacity: 0;
   transform: translate(-50%, 50%) scale(0.5);
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .backdrop.is-hidden .modal {
