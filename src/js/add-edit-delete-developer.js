@@ -52,7 +52,31 @@ function sumbitModalAddEditDeveloper(event){
 console.log("ДО dataDevelopersList:", dataDevelopersList);
 const developerObject = {
 name: formAddEditDeveloper.developerName.value,
-position: formAddEditDeveloper.developerPosition.value 
+position: formAddEditDeveloper.developerPosition.value,
+images: {
+      desktop: [
+        new URL("../images/sample-desktop-1x.jpg", import.meta.url).href + " 1x,",
+        new URL("../images/sample-desktop-2x.jpg", import.meta.url).href + " 2x,",
+        new URL("../images/sample-desktop-3x.jpg", import.meta.url).href + " 3x"
+      ],
+      tablet: [
+        new URL("../images/sample-tablet-1x.jpg", import.meta.url).href + " 1x,", 
+        new URL("../images/sample-tablet-2x.jpg", import.meta.url).href + " 2x,",
+        new URL("../images/sample-tablet-3x.jpg", import.meta.url).href + " 3x"
+      ],
+      mobile: [
+        new URL("../images/sample-mobile-1x.jpg", import.meta.url).href + " 1x,",
+        new URL("../images/sample-mobile-2x.jpg", import.meta.url).href + " 2x,",
+        new URL("../images/sample-mobile-3x.jpg", import.meta.url).href + " 3x"
+      ],
+      default: new URL("../images/sample-mobile-1x.jpg", import.meta.url).href ,
+    },
+    icons: [
+      new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
+      new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
+      new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
+      new URL("../images/symboldefs.svg#linkedin", import.meta.url).href,
+    ],
 };
 
 console.log("developerObject:", developerObject);
