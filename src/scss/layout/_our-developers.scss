@@ -55,12 +55,15 @@
         width: 270px;
       }
     }
-
+    #img-developer:hover{
+   cursor: pointer;
+    }
     &__img {
       margin-bottom: 30px;
       width: 450px;
     }
 
+    
     &__text {
       color: getColor("link");
       font-weight: 500;

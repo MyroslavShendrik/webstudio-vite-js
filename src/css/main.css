@@ -994,6 +994,9 @@ body {
     width: 270px;
   }
 }
+.our-developers-list #img-developer:hover {
+  cursor: pointer;
+}
 .our-developers-list__img {
   margin-bottom: 30px;
   width: 450px;

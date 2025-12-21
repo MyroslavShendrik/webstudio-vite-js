@@ -21,13 +21,21 @@ const modalAddEditDeveloper = document.querySelector("[data-modal-add-edit-devel
 const buttonDeleteDeveloper = document.querySelector(".modal-add-edit-developer__button-delete");
 // console.log("buttonDeleteDeveloper:",buttonDeleteDeveloper);
 const formAddEditDeveloper = document.querySelector(".form-add-edit-developer");  
-const buttonCancelDeveloper = document.querySelector(".modal-add-edit-developer__button-cancel");
+const buttonCancelDeveloper = document.getElementById("button-cancel");
+const imgDeveloper = document.querySelectorAll("#img-developer");
+console.log("imgDeveloper:",imgDeveloper);
+
 
 //! 2.2 Змінні для поточної роботи
 //! 3 надати слухачів подій
 addDeveloperButton.addEventListener("click", addDeveloper);
 formAddEditDeveloper.addEventListener("submit", sumbitModalAddEditDeveloper);
 buttonCancelDeveloper.addEventListener("click", closeModal);
+imgDeveloper.forEach((img) => {
+  img.addEventListener("click", editDeleteDeveloper)
+  console.log("click on:", img);
+});
+// imgDeveloper.addEventListener("click", editDeleteDeveloper);
 //! 4 блок функцій 
 function addDeveloper(){
 console.log("додаємо нового розробника")
@@ -37,10 +45,18 @@ buttonDeleteDeveloper.style.display = 'none';
 //! 4.1.2 відкриття модального вікна з формою для збирання даних
 toggleModalAddEditDeveloper() 
 };
-
+function editDeleteDeveloper(){
+  console.log("Вікно редагування")
+  //! 4.1.1 заміна контенту заголовка модального вікна, відкриваємо необхідні елементи
+  formTitle.textContent = "Редагування розробника";
+  buttonDeleteDeveloper.style.display = 'block';
+  toggleModalAddEditDeveloper() 
+}
+//! Закривання модально вікна при стоворенні нового розробника 
 function closeModal() {
   toggleModalAddEditDeveloper();
 }
+
 //! відкривання/закривання модального вікна для додавання/редагування розробника
 function toggleModalAddEditDeveloper(){
     console.log("відкривання/закривання модального вікна для додавання/редагування розробника");
