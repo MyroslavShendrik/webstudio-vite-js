@@ -23,7 +23,9 @@ const buttonDeleteDeveloper = document.querySelector(".modal-add-edit-developer_
 const formAddEditDeveloper = document.querySelector(".form-add-edit-developer");  
 const buttonCancelDeveloper = document.getElementById("button-cancel");
 const imgDeveloper = document.querySelectorAll("#img-developer");
-console.log("imgDeveloper:",imgDeveloper);
+// console.log("imgDeveloper:",imgDeveloper);
+const buttonSumbitDeveloper = document.querySelector(".form-add-edit-developer__button-submit");
+// console.log("buttonSumbitDeveloper:",buttonSumbitDeveloper);
 
 
 //! 2.2 Змінні для поточної роботи
@@ -41,6 +43,7 @@ function addDeveloper(){
 console.log("додаємо нового розробника")
 //! 4.1.1 заміна контенту заголовка модального вікна, приховуємо зайві елементи
 formTitle.textContent = "Додати розробника";
+
 buttonDeleteDeveloper.style.display = 'none';
 //! 4.1.2 відкриття модального вікна з формою для збирання даних
 toggleModalAddEditDeveloper() 
@@ -49,7 +52,10 @@ function editDeleteDeveloper(){
   console.log("Вікно редагування")
   //! 4.1.1 заміна контенту заголовка модального вікна, відкриваємо необхідні елементи
   formTitle.textContent = "Редагування розробника";
+  buttonSumbitDeveloper.textContent ="Редагувати"
   buttonDeleteDeveloper.style.display = 'block';
+  //! при натисканні на розробника треба, щоб підставлялось його зображення
+  
   toggleModalAddEditDeveloper() 
 }
 //! Закривання модально вікна при стоворенні нового розробника 
