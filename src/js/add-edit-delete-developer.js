@@ -26,6 +26,8 @@ const imgDeveloper = document.querySelectorAll("#img-developer");
 // console.log("imgDeveloper:",imgDeveloper);
 const buttonSumbitDeveloper = document.querySelector(".form-add-edit-developer__button-submit");
 // console.log("buttonSumbitDeveloper:",buttonSumbitDeveloper);
+const imgFormDeveloper = document.querySelector(".form-add-edit-developer__img")
+console.log("imgFormDeveloper:",imgFormDeveloper);
 
 
 //! 2.2 Змінні для поточної роботи
@@ -37,6 +39,7 @@ imgDeveloper.forEach((img) => {
   img.addEventListener("click", editDeleteDeveloper)
   console.log("click on:", img);
 });
+
 // imgDeveloper.addEventListener("click", editDeleteDeveloper);
 //! 4 блок функцій 
 function addDeveloper(){
@@ -48,14 +51,16 @@ buttonDeleteDeveloper.style.display = 'none';
 //! 4.1.2 відкриття модального вікна з формою для збирання даних
 toggleModalAddEditDeveloper() 
 };
-function editDeleteDeveloper(){
+function editDeleteDeveloper(event){
   console.log("Вікно редагування")
   //! 4.1.1 заміна контенту заголовка модального вікна, відкриваємо необхідні елементи
   formTitle.textContent = "Редагування розробника";
   buttonSumbitDeveloper.textContent ="Редагувати"
   buttonDeleteDeveloper.style.display = 'block';
   //! при натисканні на розробника треба, щоб підставлялось його зображення
-  
+  imgFormDeveloper.src = event.currentTarget//! тут у нас помилка
+  console.log("event.currentTarget:",event.currentTarget);
+  // console.log("typyof imgFormDeveloper:",typeof imgFormDeveloper);
   toggleModalAddEditDeveloper() 
 }
 //! Закривання модально вікна при стоворенні нового розробника 
