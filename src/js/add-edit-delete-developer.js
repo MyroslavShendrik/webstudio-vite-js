@@ -21,10 +21,13 @@ const modalAddEditDeveloper = document.querySelector("[data-modal-add-edit-devel
 const buttonDeleteDeveloper = document.querySelector(".modal-add-edit-developer__button-delete");
 // console.log("buttonDeleteDeveloper:",buttonDeleteDeveloper);
 const formAddEditDeveloper = document.querySelector(".form-add-edit-developer");  
+const buttonCancelDeveloper = document.querySelector(".modal-add-edit-developer__button-cancel");
+
 //! 2.2 Змінні для поточної роботи
 //! 3 надати слухачів подій
 addDeveloperButton.addEventListener("click", addDeveloper);
 formAddEditDeveloper.addEventListener("submit", sumbitModalAddEditDeveloper);
+buttonCancelDeveloper.addEventListener("click", closeModal);
 //! 4 блок функцій 
 function addDeveloper(){
 console.log("додаємо нового розробника")
@@ -35,6 +38,9 @@ buttonDeleteDeveloper.style.display = 'none';
 toggleModalAddEditDeveloper() 
 };
 
+function closeModal() {
+  toggleModalAddEditDeveloper();
+}
 //! відкривання/закривання модального вікна для додавання/редагування розробника
 function toggleModalAddEditDeveloper(){
     console.log("відкривання/закривання модального вікна для додавання/редагування розробника");
