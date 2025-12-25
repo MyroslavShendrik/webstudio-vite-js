@@ -47,7 +47,7 @@ function addDeveloper(){
 console.log("додаємо нового розробника")
 //! 4.1.1 заміна контенту заголовка модального вікна, приховуємо зайві елементи
 formTitle.textContent = "Додати розробника";
-
+ buttonSumbitDeveloper.textContent ="Додати"
 buttonDeleteDeveloper.style.display = 'none';
 //! 4.1.2 відкриття модального вікна з формою для збирання даних
 toggleModalAddEditDeveloper() 
@@ -59,9 +59,10 @@ function editDeleteDeveloper(event){
   buttonSumbitDeveloper.textContent ="Редагувати"
   buttonDeleteDeveloper.style.display = 'block';
   //! при натисканні на розробника треба, щоб підставлялось його зображення
-  imgFormDeveloper.src = event.currentTarget.src;//! тут у нас помилка
+  // imgFormDeveloper.src = event.currentTarget.src;//! тут у нас помилка
+  imgFormDeveloper.src = event.target.currentSrc;
   console.log("event.currentTarget:",event.currentTarget);
-  // console.log("typyof imgFormDeveloper:",typeof imgFormDeveloper);
+  console.log("typyof imgFormDeveloper:",typeof imgFormDeveloper);
   toggleModalAddEditDeveloper() 
 }
 //! Закривання модально вікна при стоворенні нового розробника 
