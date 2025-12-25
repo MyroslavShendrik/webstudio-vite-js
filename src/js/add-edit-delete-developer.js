@@ -40,6 +40,7 @@ imgDeveloper.forEach((img) => {
   console.log("click on:", img);
 });
 
+
 // imgDeveloper.addEventListener("click", editDeleteDeveloper);
 //! 4 блок функцій 
 function addDeveloper(){
@@ -58,7 +59,7 @@ function editDeleteDeveloper(event){
   buttonSumbitDeveloper.textContent ="Редагувати"
   buttonDeleteDeveloper.style.display = 'block';
   //! при натисканні на розробника треба, щоб підставлялось його зображення
-  imgFormDeveloper.src = event.currentTarget//! тут у нас помилка
+  imgFormDeveloper.src = event.currentTarget.src;//! тут у нас помилка
   console.log("event.currentTarget:",event.currentTarget);
   // console.log("typyof imgFormDeveloper:",typeof imgFormDeveloper);
   toggleModalAddEditDeveloper() 
