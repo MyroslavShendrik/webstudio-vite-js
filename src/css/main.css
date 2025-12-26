@@ -328,6 +328,7 @@ body {
 }
 .form-add-edit-developer__img {
   margin: 0 auto 20px;
+  width: 270px;
 }
 .form-add-edit-developer__input-developer-name, .form-add-edit-developer__input-developer-position {
   width: 100%;

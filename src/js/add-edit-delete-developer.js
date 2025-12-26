@@ -61,8 +61,13 @@ function editDeleteDeveloper(event){
   //! при натисканні на розробника треба, щоб підставлялось його зображення
   // imgFormDeveloper.src = event.currentTarget.src;//! тут у нас помилка
   imgFormDeveloper.src = event.target.currentSrc;
-  console.log("event.currentTarget:",event.currentTarget);
+  console.log("event.currentTarget:",event.target.currentTarget);
   console.log("typyof imgFormDeveloper:",typeof imgFormDeveloper);
+  //! стратегічна задача (що робимо?)
+  //! 1. зробити однаковим розміри зображення в модальному вікні 
+  //! 2. підлаштувати розмір зобрадення таким чином, щоб модальне вікно віповідало висоті екрана
+  //? тактична задача (як робимо?)
+  //? 1. змінити в файлі scss стилізації модального вікна. Зображення та його властивість width, так щоб вона підходила всім версткам стилізації
   toggleModalAddEditDeveloper() 
 }
 //! Закривання модально вікна при стоворенні нового розробника 

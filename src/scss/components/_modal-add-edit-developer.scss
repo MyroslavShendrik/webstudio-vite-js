@@ -43,7 +43,10 @@ overflow: hidden;
   }
   &__img{
     margin: 0 auto 20px ;
+    width: 270px; //! варіант 1 
+    // height: 260px;
   }
+
 &__input-developer-name,
   &__input-developer-position {
     width: 100%;
