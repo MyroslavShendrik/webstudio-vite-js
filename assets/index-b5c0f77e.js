@@ -1,7 +1,7 @@
-import{H as n}from"./social-list-85c02213.js";const m=[{title:"УВАГА ДО ДЕТАЛЕЙ",text:"Ідейні міркування, і навіть початок повсякденної роботи з формування позиції."},{title:"ПУНКТУАЛЬНІСТЬ",text:"Завдання організації, особливо рамки і місце навчання кадрів тягне у себе."},{title:"ПЛАНУВАННЯ",text:"Так само консультація з широким активом значною мірою зумовлює."},{title:"СУЧАСНІ ТЕХНОЛОГІЇ",text:"Значимість цих проблем настільки очевидна, що реалізація планових завдань."}],p=` <li class="our-pluses-list__item">
+import{H as n}from"./social-list-5012a507.js";const m=[{title:"УВАГА ДО ДЕТАЛЕЙ",text:"Ідейні міркування, і навіть початок повсякденної роботи з формування позиції."},{title:"ПУНКТУАЛЬНІСТЬ",text:"Завдання організації, особливо рамки і місце навчання кадрів тягне у себе."},{title:"ПЛАНУВАННЯ",text:"Так само консультація з широким активом значною мірою зумовлює."},{title:"СУЧАСНІ ТЕХНОЛОГІЇ",text:"Значимість цих проблем настільки очевидна, що реалізація планових завдань."}],p=` <li class="our-pluses-list__item">
     <h3 class="our-pluses-list__title">{{title}}</h3>
     <p class="our-pluses-list__text">{{text}}</p>
-  </li>`,u=document.querySelector(".our-pluses-list"),b=n.compile(p),g=m.map(e=>b(e)).join("");u.innerHTML=g;(()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};e.openModalBtn.addEventListener("click",t),e.closeModalBtn.addEventListener("click",t);function t(){e.modal.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}})();const w=`<li class="our-developers-list__item">
+  </li>`,u=document.querySelector(".our-pluses-list"),g=n.compile(p),b=m.map(e=>g(e)).join("");u.innerHTML=b;(()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};e.openModalBtn.addEventListener("click",t),e.closeModalBtn.addEventListener("click",t);function t(){e.modal.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}})();const w=`<li class="our-developers-list__item">
   <picture id="img-developer">
     <source
            srcset="
@@ -64,7 +64,10 @@ function R(){console.log("додаємо нового розробника");//!
 d.textContent="Додати розробника",f.textContent="Додати",r.style.display="none";//! 4.1.2 відкриття модального вікна з формою для збирання даних
 l()}function y(e){console.log("Вікно редагування");//! 4.1.1 заміна контенту заголовка модального вікна, відкриваємо необхідні елементи
 d.textContent="Редагування розробника",f.textContent="Редагувати",r.style.display="block";//! при натисканні на розробника треба, щоб підставлялось його зображення
-a.src=e.target.currentSrc,console.log("event.currentTarget:",e.currentTarget),console.log("typyof imgFormDeveloper:",typeof a),l()}//! Закривання модально вікна при стоворенні нового розробника 
+a.src=e.target.currentSrc,console.log("event.currentTarget:",e.target.currentTarget),console.log("typyof imgFormDeveloper:",typeof a);//! стратегічна задача (що робимо?)
+//! 1. зробити однаковим розміри зображення в модальному вікні 
+//! 2. підлаштувати розмір зобрадення таким чином, щоб модальне вікно віповідало висоті екрана
+l()}//! Закривання модально вікна при стоворенні нового розробника 
 function k(){l()}//! відкривання/закривання модального вікна для додавання/редагування розробника
 function l(){console.log("відкривання/закривання модального вікна для додавання/редагування розробника"),x.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}//! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function _(e){//! блокуємо перезавантаження сторінки 
