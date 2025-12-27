@@ -66,8 +66,19 @@ function editDeleteDeveloper(event){
   //! стратегічна задача (що робимо?)
   //! 1. зробити однаковим розміри зображення в модальному вікні 
   //! 2. підлаштувати розмір зобрадення таким чином, щоб модальне вікно віповідало висоті екрана
-  //? тактична задача (як робимо?)
+  //? тактична задача var1 (як робимо?)
   //? 1. змінити в файлі scss стилізації модального вікна. Зображення та його властивість width, так щоб вона підходила всім версткам стилізації
+  //todo тактична задача var2 (як робимо?)
+  //todo забираємо дані з localStorage в dataDevelopersList
+  dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+  console.log("dataDevelopersList:", dataDevelopersList);
+  //todo знайти об'єкт з яким треба взаємодіяти при кліку на кнопці редагування
+  //todo після того як  ми знайшли об'єкт розробника використати 3 властивості (name, position, default) 
+  //todo потім ці дані підставити в відповідні поля форми редагування
+  // const info = dataDevelopersList.event.target
+  // console.log("info:",info)
+  console.log("event.target:", event.target);
+  console.log("event.currentTarget:",event.currentTarget);
   toggleModalAddEditDeveloper() 
 }
 //! Закривання модально вікна при стоворенні нового розробника 
