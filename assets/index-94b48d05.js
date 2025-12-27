@@ -1,7 +1,7 @@
-import{H as n}from"./social-list-5012a507.js";const m=[{title:"УВАГА ДО ДЕТАЛЕЙ",text:"Ідейні міркування, і навіть початок повсякденної роботи з формування позиції."},{title:"ПУНКТУАЛЬНІСТЬ",text:"Завдання організації, особливо рамки і місце навчання кадрів тягне у себе."},{title:"ПЛАНУВАННЯ",text:"Так само консультація з широким активом значною мірою зумовлює."},{title:"СУЧАСНІ ТЕХНОЛОГІЇ",text:"Значимість цих проблем настільки очевидна, що реалізація планових завдань."}],p=` <li class="our-pluses-list__item">
+import{H as n}from"./social-list-5012a507.js";const m=[{title:"УВАГА ДО ДЕТАЛЕЙ",text:"Ідейні міркування, і навіть початок повсякденної роботи з формування позиції."},{title:"ПУНКТУАЛЬНІСТЬ",text:"Завдання організації, особливо рамки і місце навчання кадрів тягне у себе."},{title:"ПЛАНУВАННЯ",text:"Так само консультація з широким активом значною мірою зумовлює."},{title:"СУЧАСНІ ТЕХНОЛОГІЇ",text:"Значимість цих проблем настільки очевидна, що реалізація планових завдань."}],g=` <li class="our-pluses-list__item">
     <h3 class="our-pluses-list__title">{{title}}</h3>
     <p class="our-pluses-list__text">{{text}}</p>
-  </li>`,u=document.querySelector(".our-pluses-list"),g=n.compile(p),b=m.map(e=>g(e)).join("");u.innerHTML=b;(()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};e.openModalBtn.addEventListener("click",t),e.closeModalBtn.addEventListener("click",t);function t(){e.modal.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}})();const w=`<li class="our-developers-list__item">
+  </li>`,p=document.querySelector(".our-pluses-list"),u=n.compile(g),b=m.map(e=>u(e)).join("");p.innerHTML=b;(()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};e.openModalBtn.addEventListener("click",t),e.closeModalBtn.addEventListener("click",t);function t(){e.modal.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}})();const w=`<li class="our-developers-list__item">
   <picture id="img-developer">
     <source
            srcset="
@@ -67,7 +67,7 @@ d.textContent="Редагування розробника",f.textContent="Ре�
 a.src=e.target.currentSrc,console.log("event.currentTarget:",e.target.currentTarget),console.log("typyof imgFormDeveloper:",typeof a);//! стратегічна задача (що робимо?)
 //! 1. зробити однаковим розміри зображення в модальному вікні 
 //! 2. підлаштувати розмір зобрадення таким чином, щоб модальне вікно віповідало висоті екрана
-l()}//! Закривання модально вікна при стоворенні нового розробника 
+s=JSON.parse(localStorage.getItem("dataDevelopers")),console.log("dataDevelopersList:",s),console.log("event.target:",e.target),console.log("event.currentTarget:",e.currentTarget),l()}//! Закривання модально вікна при стоворенні нового розробника 
 function k(){l()}//! відкривання/закривання модального вікна для додавання/редагування розробника
 function l(){console.log("відкривання/закривання модального вікна для додавання/редагування розробника"),x.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}//! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function _(e){//! блокуємо перезавантаження сторінки 
@@ -86,7 +86,7 @@ l()}const D=[{name:"Студія",href:"./index.html",active:!0},{name:"Порт
     </a>
   </li>
 {{/each}}
-`,M=document.querySelector(".header-list"),I=n.compile(q),$=I(S);M.innerHTML=$;const E=document.querySelector(".company-list"),T=[{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company1",self.location).href},{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company2",self.location).href},{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company3",self.location).href},{width:93,height:43,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company4",self.location).href},{width:69,height:43,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company5",self.location).href},{width:62,height:45,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company6",self.location).href}],H=T.map(e=>`
+`,I=document.querySelector(".header-list"),M=n.compile(q),$=M(S);I.innerHTML=$;const E=document.querySelector(".company-list"),T=[{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company1",self.location).href},{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company2",self.location).href},{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company3",self.location).href},{width:93,height:43,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company4",self.location).href},{width:69,height:43,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company5",self.location).href},{width:62,height:45,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company6",self.location).href}],O=T.map(e=>`
       <li class="company-list__item">
         <a class="company-list__link" href="#">
           <svg width="${e.width}" height="${e.height}">
@@ -94,7 +94,7 @@ l()}const D=[{name:"Студія",href:"./index.html",active:!0},{name:"Порт
           </svg>
         </a>
       </li>
-    `).join("");E.innerHTML=H;const O=document.querySelector(".our-work-list"),B=[{src:new URL("/webstudio-vite-js/assets/work1-b062ba09.jpg",self.location).href,alt:"Робота за комп'ютером",title:"Десктопні додатки",width:370},{src:new URL("/webstudio-vite-js/assets/work2-592f2ac7.jpg",self.location).href,alt:"Робота за телефоном",title:"Мобільні додатки",width:370},{src:new URL("/webstudio-vite-js/assets/work3-98cf051d.jpg",self.location).href,alt:"Робота за планшетом",title:"Дизайнерські рішення",width:370}],C=B.map(e=>`
+    `).join("");E.innerHTML=O;const H=document.querySelector(".our-work-list"),N=[{src:new URL("/webstudio-vite-js/assets/work1-b062ba09.jpg",self.location).href,alt:"Робота за комп'ютером",title:"Десктопні додатки",width:370},{src:new URL("/webstudio-vite-js/assets/work2-592f2ac7.jpg",self.location).href,alt:"Робота за телефоном",title:"Мобільні додатки",width:370},{src:new URL("/webstudio-vite-js/assets/work3-98cf051d.jpg",self.location).href,alt:"Робота за планшетом",title:"Дизайнерські рішення",width:370}],B=N.map(e=>`
       <li class="our-work-list__item">
         <img 
           src="${e.src}" 
@@ -106,4 +106,4 @@ l()}const D=[{name:"Студія",href:"./index.html",active:!0},{name:"Порт
           <p class="our-work-list__title">${e.title}</p>
         </div>
       </li>
-    `).join("");O.innerHTML=C;
+    `).join("");H.innerHTML=B;
