@@ -60,7 +60,7 @@ function editDeleteDeveloper(event){
   buttonDeleteDeveloper.style.display = 'block';
   //! при натисканні на розробника треба, щоб підставлялось його зображення
   // imgFormDeveloper.src = event.currentTarget.src;//! тут у нас помилка
-  imgFormDeveloper.src = event.target.currentSrc;
+  // imgFormDeveloper.src = event.target.currentSrc;
   console.log("event.currentTarget:",event.target.currentTarget);
   console.log("typyof imgFormDeveloper:",typeof imgFormDeveloper);
   //! стратегічна задача (що робимо?)
@@ -73,12 +73,16 @@ function editDeleteDeveloper(event){
   dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
   console.log("dataDevelopersList:", dataDevelopersList);
   //todo знайти об'єкт з яким треба взаємодіяти при кліку на кнопці редагування
+  //todo alt та p можна знайти об'єкт за допомогою значення alt порівнюючи з name
+    console.log("event.target:", event.target)
+    console.log("event.target.alt:",event.target.alt)
+    console.log("event.target.name:",event.target.name)
+    //todo знайти в масиві об'єктів об'єкт на якому відбулася дія  за допомогою порівняння event.target.alt з властивістю об'єкта name
+    const editableCard = dataDevelopersList
+    console.log("event.currentTarget:",event.currentTarget);
   //todo після того як  ми знайшли об'єкт розробника використати 3 властивості (name, position, default) 
   //todo потім ці дані підставити в відповідні поля форми редагування
-  // const info = dataDevelopersList.event.target
-  // console.log("info:",info)
-  console.log("event.target:", event.target);
-  console.log("event.currentTarget:",event.currentTarget);
+
   toggleModalAddEditDeveloper() 
 }
 //! Закривання модально вікна при стоворенні нового розробника 
