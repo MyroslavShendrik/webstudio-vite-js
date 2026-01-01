@@ -28,7 +28,8 @@ const buttonSumbitDeveloper = document.querySelector(".form-add-edit-developer__
 // console.log("buttonSumbitDeveloper:",buttonSumbitDeveloper);
 const imgFormDeveloper = document.querySelector(".form-add-edit-developer__img")
 console.log("imgFormDeveloper:",imgFormDeveloper);
-
+const inputDeveloperName = document.querySelector(".form-add-edit-developer__input-developer-name");
+const inputDeveloperPosition = document.querySelector(".form-add-edit-developer__input-developer-position");
 
 //! 2.2 Змінні для поточної роботи
 //! 3 надати слухачів подій
@@ -82,7 +83,14 @@ function editDeleteDeveloper(event){
     console.log("event.currentTarget:",event.currentTarget);
   //todo після того як  ми знайшли об'єкт розробника використати 3 властивості (name, position, default) 
   //todo потім ці дані підставити в відповідні поля форми редагування
+  const editableDeveloper = dataDevelopersList.find(
+    developer => developer.name === event.target.alt
+  );
 
+
+  inputDeveloperName.value = editableDeveloper.name;
+  inputDeveloperPosition.value = editableDeveloper.position;
+  imgFormDeveloper.src = editableDeveloper.default;
   toggleModalAddEditDeveloper() 
 }
 //! Закривання модально вікна при стоворенні нового розробника 
