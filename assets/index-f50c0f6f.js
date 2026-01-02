@@ -67,7 +67,7 @@ d.textContent="Редагування розробника",f.textContent="Ре�
 console.log("event.currentTarget:",e.target.currentTarget),console.log("typyof imgFormDeveloper:",typeof a);//! стратегічна задача (що робимо?)
 //! 1. зробити однаковим розміри зображення в модальному вікні 
 //! 2. підлаштувати розмір зобрадення таким чином, щоб модальне вікно віповідало висоті екрана
-t=JSON.parse(localStorage.getItem("dataDevelopers")),console.log("dataDevelopersList:",t),console.log("event.target:",e.target),console.log("event.target.alt:",e.target.alt),console.log("event.target.name:",e.target.name),console.log("event.currentTarget:",e.currentTarget);const s=t.find(m=>m.name===e.target.alt);R.value=s.name,k.value=s.position,a.src=s.default,l()}//! Закривання модально вікна при стоворенні нового розробника 
+t=JSON.parse(localStorage.getItem("dataDevelopers")),console.log("dataDevelopersList:",t),console.log("event.target:",e.target),console.log("event.target.alt:",e.target.alt),console.log("event.target.name:",e.target.name),console.log("event.currentTarget:",e.currentTarget);const s=t.find(m=>m.name===e.target.alt);R.value=s.name,k.value=s.position,a.src=s.images.default,l()}//! Закривання модально вікна при стоворенні нового розробника 
 function S(){l()}//! відкривання/закривання модального вікна для додавання/редагування розробника
 function l(){console.log("відкривання/закривання модального вікна для додавання/редагування розробника"),L.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}//! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function q(e){//! блокуємо перезавантаження сторінки 
