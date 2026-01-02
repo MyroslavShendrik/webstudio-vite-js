@@ -150,9 +150,13 @@ console.log("ПІСЛЯ  dataDevelopersList:", dataDevelopersList);
 //! 4.3.4 зберегти змінені дані в LocalStorage
  localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
 }
-//! 4.3.2 зібрати дані з форми по кнопці "submit" і записати ці дані в об'єкт
-console.log("ДО dataDevelopersList:", dataDevelopersList);
+if(buttonSumbitDeveloper.textContent === "Редагувати"){
 //! збираємо дані з форми 
+}
+console.log("ДО dataDevelopersList:", dataDevelopersList);
+//! 4.3.4 зберегти змінені дані в LocalStorage
+ localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
+
  //! 4.3.5 закрити модальне вікно з формою для збирання даних
  toggleModalAddEditDeveloper()
 }
