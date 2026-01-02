@@ -48,8 +48,9 @@ function addDeveloper(){
 console.log("додаємо нового розробника")
 //! 4.1.1 заміна контенту заголовка модального вікна, приховуємо зайві елементи
 formTitle.textContent = "Додати розробника";
- buttonSumbitDeveloper.textContent ="Додати"
+buttonSumbitDeveloper.textContent ="Додати"
 buttonDeleteDeveloper.style.display = 'none';
+
 //! 4.1.2 відкриття модального вікна з формою для збирання даних
 toggleModalAddEditDeveloper() 
 };
@@ -79,7 +80,6 @@ function editDeleteDeveloper(event){
     console.log("event.target.alt:",event.target.alt)
     console.log("event.target.name:",event.target.name)
     //todo знайти в масиві об'єктів об'єкт на якому відбулася дія  за допомогою порівняння event.target.alt з властивістю об'єкта name
-    const editableCard = dataDevelopersList
     console.log("event.currentTarget:",event.currentTarget);
   //todo після того як  ми знайшли об'єкт розробника використати 3 властивості (name, position, default) 
   //todo потім ці дані підставити в відповідні поля форми редагування
@@ -90,7 +90,7 @@ function editDeleteDeveloper(event){
 
   inputDeveloperName.value = editableDeveloper.name;
   inputDeveloperPosition.value = editableDeveloper.position;
-  imgFormDeveloper.src = editableDeveloper.default;
+  imgFormDeveloper.src = editableDeveloper.images.default;
   toggleModalAddEditDeveloper() 
 }
 //! Закривання модально вікна при стоворенні нового розробника 
@@ -103,6 +103,7 @@ function toggleModalAddEditDeveloper(){
     console.log("відкривання/закривання модального вікна для додавання/редагування розробника");
     modalAddEditDeveloper.classList.toggle("is-hidden");
     document.body.classList.toggle("no-scroll");
+    
 };
 //! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function sumbitModalAddEditDeveloper(event){
