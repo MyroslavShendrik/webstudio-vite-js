@@ -44,6 +44,7 @@ imgDeveloper.forEach((img) => {
 
 // imgDeveloper.addEventListener("click", editDeleteDeveloper);
 //! 4 блок функцій 
+//! Додає розробника
 function addDeveloper(){
 console.log("додаємо нового розробника")
 //! 4.1.1 заміна контенту заголовка модального вікна, приховуємо зайві елементи
@@ -54,6 +55,7 @@ buttonDeleteDeveloper.style.display = 'none';
 //! 4.1.2 відкриття модального вікна з формою для збирання даних
 toggleModalAddEditDeveloper() 
 };
+//! редагує розробника 
 function editDeleteDeveloper(event){
   console.log("Вікно редагування")
   //! 4.1.1 заміна контенту заголовка модального вікна, відкриваємо необхідні елементи
@@ -103,7 +105,7 @@ function toggleModalAddEditDeveloper(){
     console.log("відкривання/закривання модального вікна для додавання/редагування розробника");
     modalAddEditDeveloper.classList.toggle("is-hidden");
     document.body.classList.toggle("no-scroll");
-    
+
 };
 //! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function sumbitModalAddEditDeveloper(event){
@@ -111,9 +113,8 @@ function sumbitModalAddEditDeveloper(event){
     // event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
 //! 4.3.1 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
 dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
-//! 4.3.2 зібрати дані з форми по кнопці "submit" і записати ці дані в об'єкт
-console.log("ДО dataDevelopersList:", dataDevelopersList);
-const developerObject = {
+if (buttonSumbitDeveloper.textContent === "Додати"){
+  const developerObject = {
 name: formAddEditDeveloper.developerName.value,
 position: formAddEditDeveloper.developerPosition.value,
 images: {
@@ -147,7 +148,11 @@ console.log("developerObject:", developerObject);
 dataDevelopersList.push(developerObject);
 console.log("ПІСЛЯ  dataDevelopersList:", dataDevelopersList);
 //! 4.3.4 зберегти змінені дані в LocalStorage
-  localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
-//! 4.3.5 закрити модальне вікно з формою для збирання даних
+ localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
+}
+//! 4.3.2 зібрати дані з форми по кнопці "submit" і записати ці дані в об'єкт
+console.log("ДО dataDevelopersList:", dataDevelopersList);
+//! збираємо дані з форми 
+ //! 4.3.5 закрити модальне вікно з формою для збирання даних
  toggleModalAddEditDeveloper()
 }
