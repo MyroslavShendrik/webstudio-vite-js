@@ -8,6 +8,7 @@ console.log(
 //! 1.2 Перетворити дані, які ми взяли з LocalStorage на масив об'єктів
 //! 1.3 Записати це в якусь зміну
 let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+let currentDeveloperName = null;
 console.log("dataDevelopersList:",dataDevelopersList);
 //! 2.1 Пошук всіх необхідних елементів
 const developersList = document.querySelector(".our-developers-list");
@@ -89,6 +90,7 @@ function editDeleteDeveloper(event){
     developer => developer.name === event.target.alt
   );
 
+  currentDeveloperName = editableDeveloper.name;
 
   inputDeveloperName.value = editableDeveloper.name;
   inputDeveloperPosition.value = editableDeveloper.position;
@@ -110,7 +112,7 @@ function toggleModalAddEditDeveloper(){
 //! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function sumbitModalAddEditDeveloper(event){
 //! блокуємо перезавантаження сторінки 
-    event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
+    // event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
 //! 4.3.1 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
 dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 if (buttonSumbitDeveloper.textContent === "Додати"){
@@ -150,19 +152,16 @@ console.log("ПІСЛЯ  dataDevelopersList:", dataDevelopersList);
 //! 4.3.4 зберегти змінені дані в LocalStorage
  localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
 }
-if(buttonSumbitDeveloper.textContent === "Редагувати"){
-//! збираємо дані з форми 
-const newDeveloperName = inputDeveloperName.value;
-const newDeveloperPosition = inputDeveloperPosition.value;
-console.log("newDeveloperName:",newDeveloperName);
-console.log("newDeveloperPosition:",newDeveloperPosition);
- const editableDeveloper = dataDevelopersList.find(
-    developer => developer.name === event.target.alt
+if (buttonSumbitDeveloper.textContent === "Редагувати") {
+  const newDeveloperName = inputDeveloperName.value;
+  const newDeveloperPosition = inputDeveloperPosition.value;
+  const editableDeveloper = dataDevelopersList.find(
+    developer => developer.name === currentDeveloperName
   );
   editableDeveloper.name = newDeveloperName;
   editableDeveloper.position = newDeveloperPosition;
-  console.log("editableDeveloper:",editableDeveloper);
 }
+
 console.log("ДО dataDevelopersList:", dataDevelopersList);
 //! 4.3.4 зберегти змінені дані в LocalStorage
  localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
