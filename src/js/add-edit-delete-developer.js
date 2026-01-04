@@ -112,7 +112,7 @@ function toggleModalAddEditDeveloper(){
 //! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function sumbitModalAddEditDeveloper(event){
 //! блокуємо перезавантаження сторінки 
-    // event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
+    event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
 //! 4.3.1 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
 dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 if (buttonSumbitDeveloper.textContent === "Додати"){
@@ -149,12 +149,11 @@ console.log("developerObject:", developerObject);
 //! 4.3.3 додаємо новий об'єкт до масиву об'єктів
 dataDevelopersList.push(developerObject);
 console.log("ПІСЛЯ  dataDevelopersList:", dataDevelopersList);
-//! 4.3.4 зберегти змінені дані в LocalStorage
- localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
 }
 if (buttonSumbitDeveloper.textContent === "Редагувати") {
   const newDeveloperName = inputDeveloperName.value;
   const newDeveloperPosition = inputDeveloperPosition.value;
+
   const editableDeveloper = dataDevelopersList.find(
     developer => developer.name === currentDeveloperName
   );
@@ -162,9 +161,9 @@ if (buttonSumbitDeveloper.textContent === "Редагувати") {
   editableDeveloper.position = newDeveloperPosition;
 }
 
-console.log("ДО dataDevelopersList:", dataDevelopersList);
+console.log("Після dataDevelopersList:", dataDevelopersList);
 //! 4.3.4 зберегти змінені дані в LocalStorage
- localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
+//  localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
 
  //! 4.3.5 закрити модальне вікно з формою для збирання даних
  toggleModalAddEditDeveloper()
