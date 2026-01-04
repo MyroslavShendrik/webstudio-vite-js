@@ -41,6 +41,7 @@ imgDeveloper.forEach((img) => {
   img.addEventListener("click", editDeleteDeveloper)
   console.log("click on:", img);
 });
+buttonDeleteDeveloper.addEventListener("click",deleteDeveloper);
 
 
 // imgDeveloper.addEventListener("click", editDeleteDeveloper);
@@ -97,6 +98,30 @@ function editDeleteDeveloper(event){
   imgFormDeveloper.src = editableDeveloper.images.default;
   toggleModalAddEditDeveloper() 
 }
+
+function deleteDeveloper(event){
+dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+console.log("dataDevelopersList 1:",dataDevelopersList);
+//! знайти об'єкт
+  // const editableDeveloper = dataDevelopersList.find(
+  //   developer => developer.name === currentDeveloperName
+  // );
+  // console.log("editableDeveloper:",editableDeveloper);
+//! видалити об'єкт 
+  dataDevelopersList = dataDevelopersList.filter(
+    developer => developer.name !== currentDeveloperName
+  );
+console.log("dataDevelopersList 2:",dataDevelopersList);
+   localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
+   
+   toggleModalAddEditDeveloper();
+   //! перезавантажити сторінку \
+   //! var 1 залишає застосунок в тому місці де відбулась подія 
+   location.reload()
+   //! var 2 скидає всю програму - начебто користувач натиснув F5
+  //  window.location.href = window.location.href;
+};
+
 //! Закривання модально вікна при стоворенні нового розробника 
 function closeModal() {
   toggleModalAddEditDeveloper();
@@ -112,7 +137,7 @@ function toggleModalAddEditDeveloper(){
 //! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
 function sumbitModalAddEditDeveloper(event){
 //! блокуємо перезавантаження сторінки 
-    event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
+    // event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
 //! 4.3.1 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
 dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 if (buttonSumbitDeveloper.textContent === "Додати"){
@@ -168,3 +193,6 @@ console.log("Після dataDevelopersList:", dataDevelopersList);
  //! 4.3.5 закрити модальне вікно з формою для збирання даних
  toggleModalAddEditDeveloper()
 }
+//! план дій для видалення розробника 
+//! надати слухача подій на кнопку видалення 
+
