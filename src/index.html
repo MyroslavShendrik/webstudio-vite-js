@@ -325,8 +325,16 @@
         </button>
       </div>
     </div>
-
-    <!-- Scripts -->
+         <!--? модальне вікно для видалення-->
+<div class="backdrop is-hidden" data-modal-confirm-delete>
+  <div class="modal-confirm">
+    <p class="modal-confirm__text">
+      Видалити розробника: <span id="confirm-dev-name"></span>?
+    </p>
+    <button id="confirm-delete-yes">Так</button>
+    <button id="confirm-delete-no">Ні</button>                                                                   
+  </div>
+</div>
     <script type="module" src="./js/pluses.js"></script>
     <script type="module" src="./js/modal.js"></script>
     <script type="module" src="./js/mob-menu.js"></script>

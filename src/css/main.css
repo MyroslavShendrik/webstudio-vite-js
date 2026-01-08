@@ -413,6 +413,44 @@ body {
   background-color: #b22222;
 }
 
+[data-modal-confirm-delete] {
+  z-index: 100;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-modal-confirm-delete].is-hidden {
+  display: none;
+}
+
+.modal-confirm {
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 10px;
+  width: 320px;
+  max-width: calc(100% - 40px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.modal-confirm button {
+  min-width: 100px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.modal-confirm #confirm-delete-yes {
+  background: #d33f49;
+  color: #fff;
+  margin-right: 10px;
+}
+.modal-confirm #confirm-delete-no {
+  background: #e0e0e0;
+}
+
 .header {
   padding-top: 16px;
   padding-bottom: 16px;

@@ -31,7 +31,10 @@ const imgFormDeveloper = document.querySelector(".form-add-edit-developer__img")
 console.log("imgFormDeveloper:",imgFormDeveloper);
 const inputDeveloperName = document.querySelector(".form-add-edit-developer__input-developer-name");
 const inputDeveloperPosition = document.querySelector(".form-add-edit-developer__input-developer-position");
-
+const confirmModal = document.querySelector('[data-modal-confirm-delete]');
+const confirmYesBtn = document.getElementById('confirm-delete-yes');
+const confirmNoBtn = document.getElementById('confirm-delete-no');
+const confirmDevName = document.getElementById('confirm-dev-name');
 //! 2.2 Змінні для поточної роботи
 //! 3 надати слухачів подій
 addDeveloperButton.addEventListener("click", addDeveloper);
@@ -41,7 +44,14 @@ imgDeveloper.forEach((img) => {
   img.addEventListener("click", editDeleteDeveloper)
   console.log("click on:", img);
 });
-buttonDeleteDeveloper.addEventListener("click",deleteDeveloper);
+//! buttonDeleteDeveloper.addEventListener("click",deleteDeveloper);
+buttonDeleteDeveloper.addEventListener('click', openConfirmModal);
+
+//! Кнопка "Ні" у модалці підтвердження
+confirmNoBtn.addEventListener('click', closeConfirmModal);
+
+//! Кнопка "Так" у модалці підтвердження
+confirmYesBtn.addEventListener('click',  deleteDeveloper)
 
 
 // imgDeveloper.addEventListener("click", editDeleteDeveloper);
@@ -188,11 +198,23 @@ if (buttonSumbitDeveloper.textContent === "Редагувати") {
 
 console.log("Після dataDevelopersList:", dataDevelopersList);
 //! 4.3.4 зберегти змінені дані в LocalStorage
-//  localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
+ localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
 
  //! 4.3.5 закрити модальне вікно з формою для збирання даних
  toggleModalAddEditDeveloper()
 }
 //! план дій для видалення розробника 
 //! надати слухача подій на кнопку видалення 
+function openConfirmModal(event) {
+  event.preventDefault();
+  confirmDevName.textContent = currentDeveloperName;
+  confirmModal.classList.remove("is-hidden");
+  document.body.classList.add("no-scroll");
+}
+ 
+
+function closeConfirmModal() {
+  confirmModal.classList.add('is-hidden');
+  document.body.classList.remove('no-scroll');
+}
 
