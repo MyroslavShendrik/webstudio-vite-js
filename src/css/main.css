@@ -1005,6 +1005,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+    height: 535px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1015,6 +1016,7 @@ body {
     gap: _;
     flex-wrap: _;
     flex-direction: _;
+    height: 421px;
   }
 }
 .our-developers-list__item {
