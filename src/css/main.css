@@ -995,6 +995,9 @@ body {
 .our-developers-list {
   align-items: center;
   justify-content: center;
+  outline: 1px tomato solid;
+  height: 503px;
+  overflow: scroll;
 }
 @media screen and (min-width: 768px) {
   .our-developers-list {
