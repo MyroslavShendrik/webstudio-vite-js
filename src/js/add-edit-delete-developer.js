@@ -8,7 +8,8 @@ console.log(
 //! 1.2 Перетворити дані, які ми взяли з LocalStorage на масив об'єктів
 //! 1.3 Записати це в якусь зміну
 let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
-let currentDeveloperName = null;
+let currentDeveloperName = "";
+console.log("typeof null:", typeof null);
 console.log("dataDevelopersList:",dataDevelopersList);
 //! 2.1 Пошук всіх необхідних елементів
 const developersList = document.querySelector(".our-developers-list");
@@ -44,7 +45,6 @@ imgDeveloper.forEach((img) => {
   img.addEventListener("click", editDeleteDeveloper)
   console.log("click on:", img);
 });
-//! buttonDeleteDeveloper.addEventListener("click",deleteDeveloper);
 buttonDeleteDeveloper.addEventListener('click', openConfirmModal);
 
 //! Кнопка "Ні" у модалці підтвердження
@@ -205,8 +205,8 @@ console.log("Після dataDevelopersList:", dataDevelopersList);
 }
 //! план дій для видалення розробника 
 //! надати слухача подій на кнопку видалення 
-function openConfirmModal(event) {
-  event.preventDefault();
+function openConfirmModal() {
+  // event.preventDefault();
   confirmDevName.textContent = currentDeveloperName;
   confirmModal.classList.remove("is-hidden");
   document.body.classList.add("no-scroll");

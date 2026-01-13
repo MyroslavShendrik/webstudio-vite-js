@@ -995,6 +995,9 @@ body {
 .our-developers-list {
   align-items: center;
   justify-content: center;
+  outline: 1px tomato solid;
+  height: 503px;
+  overflow: scroll;
 }
 @media screen and (min-width: 768px) {
   .our-developers-list {
@@ -1002,6 +1005,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+    height: 535px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1012,6 +1016,7 @@ body {
     gap: _;
     flex-wrap: _;
     flex-direction: _;
+    height: 421px;
   }
 }
 .our-developers-list__item {
