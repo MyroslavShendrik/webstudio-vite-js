@@ -993,18 +993,25 @@ body {
   margin: 0 auto 20px;
 }
 .our-developers-list {
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  scroll-behavior: auto;
   outline: 1px tomato solid;
   height: 503px;
-  overflow: scroll;
+  /* ===== ДОДАНО ДЛЯ КОРЕКТНОЇ ШИРИНИ З УРАХУВАННЯМ SCROLL ===== */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  box-sizing: border-box;
+  flex: 0 1 100%;
+  /* ============================================================ */
 }
 @media screen and (min-width: 768px) {
   .our-developers-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 30px;
+    flex: 0 1 calc((100% - 30px) / 2); /* на планшеті 2 в ряд */
     height: 535px;
   }
 }
@@ -1017,6 +1024,7 @@ body {
     flex-wrap: _;
     flex-direction: _;
     height: 421px;
+    flex: 0 1 calc((100% - 90px) / 4);
   }
 }
 .our-developers-list__item {
