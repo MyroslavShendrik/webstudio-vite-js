@@ -993,7 +993,7 @@ body {
   margin: 0 auto 20px;
 }
 .our-developers-list {
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   scroll-behavior: auto;
   outline: 1px tomato solid;
@@ -1011,6 +1011,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 12px;
     flex: 0 1 calc((100% - 30px) / 2); /* на планшеті 2 в ряд */
     height: 535px;
   }
@@ -1025,6 +1026,7 @@ body {
     flex-direction: _;
     height: 421px;
     flex: 0 1 calc((100% - 90px) / 4);
+    gap: 18px;
   }
 }
 .our-developers-list__item {
