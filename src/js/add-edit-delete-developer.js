@@ -24,7 +24,7 @@ const buttonDeleteDeveloper = document.querySelector(".modal-add-edit-developer_
 // console.log("buttonDeleteDeveloper:",buttonDeleteDeveloper);
 const formAddEditDeveloper = document.querySelector(".form-add-edit-developer");  
 const buttonCancelDeveloper = document.getElementById("button-cancel");
-const imgDeveloper = document.querySelectorAll("#img-developer");
+const imgDeveloper = document.querySelectorAll(".img-developer");
 // console.log("imgDeveloper:",imgDeveloper);
 const buttonSumbitDeveloper = document.querySelector(".form-add-edit-developer__button-submit");
 // console.log("buttonSumbitDeveloper:",buttonSumbitDeveloper);

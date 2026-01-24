@@ -1,6 +1,13 @@
 import Handlebars from "handlebars";
-import developerTemplate from "../templates/our-developers-item-1.hbs?raw";
+// import developerTemplate from "../templates/our-developers-item-1.hbs?raw";
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import developerTemplate from "../templates/our-developers-item-2.hbs?raw";
 
+
+if (window.lazySizes) {
+  lazySizes.loader.checkElems();
+}
 
 console.error('Рендеримо список розробників в секції "Наша команда"');
 
@@ -710,3 +717,4 @@ const markup = dataDevelopersList
   .join("");
 console.log(" markup:", markup);
 developersList.innerHTML = markup;
+lazySizes.loader.checkElems();
