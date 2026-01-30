@@ -1,4 +1,4 @@
-import{H as b}from"./social-list-cdd65241.js";const h=[{title:"УВАГА ДО ДЕТАЛЕЙ",text:"Ідейні міркування, і навіть початок повсякденної роботи з формування позиції."},{title:"ПУНКТУАЛЬНІСТЬ",text:"Завдання організації, особливо рамки і місце навчання кадрів тягне у себе."},{title:"ПЛАНУВАННЯ",text:"Так само консультація з широким активом значною мірою зумовлює."},{title:"СУЧАСНІ ТЕХНОЛОГІЇ",text:"Значимість цих проблем настільки очевидна, що реалізація планових завдань."}],x=` <li class="our-pluses-list__item">
+import{H as b}from"./social-list-ed51bbca.js";const h=[{title:"УВАГА ДО ДЕТАЛЕЙ",text:"Ідейні міркування, і навіть початок повсякденної роботи з формування позиції."},{title:"ПУНКТУАЛЬНІСТЬ",text:"Завдання організації, особливо рамки і місце навчання кадрів тягне у себе."},{title:"ПЛАНУВАННЯ",text:"Так само консультація з широким активом значною мірою зумовлює."},{title:"СУЧАСНІ ТЕХНОЛОГІЇ",text:"Значимість цих проблем настільки очевидна, що реалізація планових завдань."}],x=` <li class="our-pluses-list__item">
     <h3 class="our-pluses-list__title">{{title}}</h3>
     <p class="our-pluses-list__text">{{text}}</p>
   </li>`,L=document.querySelector(".our-pluses-list"),U=b.compile(x),R=h.map(e=>U(e)).join("");L.innerHTML=R;(()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};e.openModalBtn.addEventListener("click",s),e.closeModalBtn.addEventListener("click",s);function s(){e.modal.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}})();const k=`
@@ -63,36 +63,36 @@ const D=b.compile(k),w=o.map(e=>D(e)).join("");console.log(" markup:",w);y.inner
 //! 1.2 Перетворити дані, які ми взяли з LocalStorage на масив об'єктів
 //! 1.3 Записати це в якусь зміну
 let t=JSON.parse(localStorage.getItem("dataDevelopers")),f="";console.log("typeof null:","object");console.log("dataDevelopersList:",t);//! 2.1 Пошук всіх необхідних елементів
-document.querySelector(".our-developers-list");const _=document.querySelector(".our-developers__button"),g=document.querySelector(".form-add-edit-developer__title"),S=document.querySelector("[data-modal-add-edit-developer]"),r=document.querySelector(".modal-add-edit-developer__button-delete"),d=document.querySelector(".form-add-edit-developer"),I=document.getElementById("button-cancel"),E=document.querySelectorAll(".img-developer"),n=document.querySelector(".form-add-edit-developer__button-submit"),c=document.querySelector(".form-add-edit-developer__img");console.log("imgFormDeveloper:",c);const j=document.querySelector(".form-add-edit-developer__input-developer-name"),m=document.querySelector(".form-add-edit-developer__input-developer-position"),u=document.querySelector("[data-modal-confirm-delete]"),q=document.getElementById("confirm-delete-yes"),M=document.getElementById("confirm-delete-no"),N=document.getElementById("confirm-dev-name");//! 2.2 Змінні для поточної роботи
+const _=document.querySelector(".our-developers-list__item");console.log("developersList:",_);const S=document.querySelector(".our-developers__button"),g=document.querySelector(".form-add-edit-developer__title"),I=document.querySelector("[data-modal-add-edit-developer]"),r=document.querySelector(".modal-add-edit-developer__button-delete"),d=document.querySelector(".form-add-edit-developer"),E=document.getElementById("button-cancel"),q=document.querySelectorAll(".img-developer"),n=document.querySelector(".form-add-edit-developer__button-submit"),c=document.querySelector(".form-add-edit-developer__img");console.log("imgFormDeveloper:",c);const j=document.querySelector(".form-add-edit-developer__input-developer-name"),m=document.querySelector(".form-add-edit-developer__input-developer-position"),u=document.querySelector("[data-modal-confirm-delete]"),M=document.getElementById("confirm-delete-yes"),$=document.getElementById("confirm-delete-no"),N=document.getElementById("confirm-dev-name");//! 2.2 Змінні для поточної роботи
 //! 3 надати слухачів подій
-_.addEventListener("click",$);d.addEventListener("submit",O);I.addEventListener("click",C);E.forEach(e=>{e.addEventListener("click",T),console.log("click on:",e)});r.addEventListener("click",F);//! Кнопка "Ні" у модалці підтвердження
-M.addEventListener("click",P);//! Кнопка "Так" у модалці підтвердження
-q.addEventListener("click",B);//! 4 блок функцій 
+S.addEventListener("click",T);d.addEventListener("submit",F);E.addEventListener("click",O);q.forEach(e=>{e.addEventListener("click",B),console.log("click on:",e)});r.addEventListener("click",P);//! Кнопка "Ні" у модалці підтвердження
+$.addEventListener("click",J);//! Кнопка "Так" у модалці підтвердження
+M.addEventListener("click",C);//! 4 блок функцій 
 //! Додає розробника
-function $(){console.log("додаємо нового розробника");//! 4.1.1 заміна контенту заголовка модального вікна, приховуємо зайві елементи
+function T(){console.log("додаємо нового розробника");//! 4.1.1 заміна контенту заголовка модального вікна, приховуємо зайві елементи
 g.textContent="Додати розробника",n.textContent="Додати",r.style.display="none";//! 4.1.2 відкриття модального вікна з формою для збирання даних
 l()}//! редагує розробника 
-function T(e){console.log("Вікно редагування");//! 4.1.1 заміна контенту заголовка модального вікна, відкриваємо необхідні елементи
+function B(e){console.log("Вікно редагування");//! 4.1.1 заміна контенту заголовка модального вікна, відкриваємо необхідні елементи
 g.textContent="Редагування розробника",n.textContent="Редагувати",r.style.display="block";//! при натисканні на розробника треба, щоб підставлялось його зображення
 console.log("event.currentTarget:",e.target.currentTarget),console.log("typyof imgFormDeveloper:",typeof c);//! стратегічна задача (що робимо?)
 //! 1. зробити однаковим розміри зображення в модальному вікні 
 //! 2. підлаштувати розмір зобрадення таким чином, щоб модальне вікно віповідало висоті екрана
-t=JSON.parse(localStorage.getItem("dataDevelopers")),console.log("dataDevelopersList:",t),console.log("event.target:",e.target),console.log("event.target.alt:",e.target.alt),console.log("event.target.name:",e.target.name),console.log("event.currentTarget:",e.currentTarget);const s=t.find(a=>a.name===e.target.alt);f=s.name,j.value=s.name,m.value=s.position,c.src=s.images.default,l()}function B(e){t=JSON.parse(localStorage.getItem("dataDevelopers")),console.log("dataDevelopersList 1:",t);//! знайти об'єкт
+t=JSON.parse(localStorage.getItem("dataDevelopers")),console.log("dataDevelopersList:",t),console.log("event.target:",e.target),console.log("event.target.alt:",e.target.alt),console.log("event.target.name:",e.target.name),console.log("event.currentTarget:",e.currentTarget);const s=t.find(a=>a.name===e.target.alt);f=s.name,j.value=s.name,m.value=s.position,c.src=s.images.default,l()}function C(e){t=JSON.parse(localStorage.getItem("dataDevelopers")),console.log("dataDevelopersList 1:",t);//! знайти об'єкт
 //! видалити об'єкт 
 t=t.filter(s=>s.name!==f),console.log("dataDevelopersList 2:",t),localStorage.setItem("dataDevelopers",JSON.stringify(t,null,2)),l();//! перезавантажити сторінку \
 //! var 1 залишає застосунок в тому місці де відбулась подія 
 location.reload();//! var 2 скидає всю програму - начебто користувач натиснув F5
 }//! Закривання модально вікна при стоворенні нового розробника 
-function C(){l()}//! відкривання/закривання модального вікна для додавання/редагування розробника
-function l(){console.log("відкривання/закривання модального вікна для додавання/редагування розробника"),S.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}//! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
-function O(e){//! блокуємо перезавантаження сторінки 
+function O(){l()}//! відкривання/закривання модального вікна для додавання/редагування розробника
+function l(){console.log("відкривання/закривання модального вікна для додавання/редагування розробника"),I.classList.toggle("is-hidden"),document.body.classList.toggle("no-scroll")}//! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
+function F(e){//! блокуємо перезавантаження сторінки 
 //! 4.3.1 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
 if(t=JSON.parse(localStorage.getItem("dataDevelopers")),n.textContent==="Додати"){const s={name:d.developerName.value,position:d.developerPosition.value,images:{desktop:[new URL("/webstudio-vite-js/assets/sample-desktop-1x-6f815283.jpg",self.location).href+" 1x,",new URL("/webstudio-vite-js/assets/sample-desktop-2x-02d6ae45.jpg",self.location).href+" 2x,",new URL("/webstudio-vite-js/assets/sample-desktop-3x-5afcc7c9.jpg",self.location).href+" 3x"],tablet:[new URL("/webstudio-vite-js/assets/sample-tablet-1x-f731c0b1.jpg",self.location).href+" 1x,",new URL("/webstudio-vite-js/assets/sample-tablet-2x-c40bf428.jpg",self.location).href+" 2x,",new URL("/webstudio-vite-js/assets/sample-tablet-3x-58cbcf21.jpg",self.location).href+" 3x"],mobile:[new URL("/webstudio-vite-js/assets/sample-mobile-1x-6a91fc91.jpg",self.location).href+" 1x,",new URL("/webstudio-vite-js/assets/sample-mobile-2x-1c983446.jpg",self.location).href+" 2x,",new URL("/webstudio-vite-js/assets/sample-mobile-3x-74a3db58.jpg",self.location).href+" 3x"],default:new URL("/webstudio-vite-js/assets/sample-mobile-1x-6a91fc91.jpg",self.location).href},icons:[new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#instagram",self.location).href,new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#twitter",self.location).href,new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#facebook",self.location).href,new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#linkedin",self.location).href]};console.log("developerObject:",s);//! 4.3.3 додаємо новий об'єкт до масиву об'єктів
 t.push(s),console.log("ПІСЛЯ  dataDevelopersList:",t)}if(n.textContent==="Редагувати"){const s=j.value,a=m.value,i=t.find(p=>p.name===f);i.name=s,i.position=a}console.log("Після dataDevelopersList:",t);//! 4.3.4 зберегти змінені дані в LocalStorage
 localStorage.setItem("dataDevelopers",JSON.stringify(t,null,2));//! 4.3.5 закрити модальне вікно з формою для збирання даних
 l()}//! план дій для видалення розробника 
 //! надати слухача подій на кнопку видалення 
-function F(){N.textContent=f,u.classList.remove("is-hidden"),document.body.classList.add("no-scroll")}function P(){u.classList.add("is-hidden"),document.body.classList.remove("no-scroll")}const J=document.querySelectorAll(".our-developers-list__img"),A=e=>{e.src=e.dataset.src,e.parentElement.querySelectorAll("source").forEach(i=>{i.srcset=i.dataset.srcset})},v=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(A(s.target),v.unobserve(s.target),console.log(`Завантажено: ${s.target.alt}`))})},{threshold:.5});J.forEach(e=>v.observe(e));const H=[{name:"Студія",href:"./index.html",active:!0},{name:"Портфоліо",href:"./portfolio.html",active:!1},{name:"Контакти",href:"#contacts",active:!1}],z={links:H},W=`{{#each links}}
+function P(){N.textContent=f,u.classList.remove("is-hidden"),document.body.classList.add("no-scroll")}function J(){u.classList.add("is-hidden"),document.body.classList.remove("no-scroll")}const A=document.querySelectorAll(".our-developers-list__img"),H=e=>{e.src=e.dataset.src,e.parentElement.querySelectorAll("source").forEach(i=>{i.srcset=i.dataset.srcset})},v=new IntersectionObserver(e=>{e.forEach(s=>{s.isIntersecting&&(H(s.target),v.unobserve(s.target),console.log(`Завантажено: ${s.target.alt}`))})},{threshold:.5});A.forEach(e=>v.observe(e));const z=[{name:"Студія",href:"./index.html",active:!0},{name:"Портфоліо",href:"./portfolio.html",active:!1},{name:"Контакти",href:"#contacts",active:!1}],W={links:z},Y=`{{#each links}}
   <li class="header-list__item">
     <a
       class="header-list__link {{#if active}}header-list__link--active{{/if}}"
@@ -102,7 +102,7 @@ function F(){N.textContent=f,u.classList.remove("is-hidden"),document.body.class
     </a>
   </li>
 {{/each}}
-`,Y=document.querySelector(".header-list"),G=b.compile(W),K=G(z);Y.innerHTML=K;const Q=document.querySelector(".company-list"),V=[{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company1",self.location).href},{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company2",self.location).href},{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company3",self.location).href},{width:93,height:43,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company4",self.location).href},{width:69,height:43,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company5",self.location).href},{width:62,height:45,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company6",self.location).href}],X=V.map(e=>`
+`,G=document.querySelector(".header-list"),K=b.compile(Y),Q=K(W);G.innerHTML=Q;const V=document.querySelector(".company-list"),X=[{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company1",self.location).href},{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company2",self.location).href},{width:41,height:46,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company3",self.location).href},{width:93,height:43,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company4",self.location).href},{width:69,height:43,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company5",self.location).href},{width:62,height:45,href:new URL("/webstudio-vite-js/assets/symboldefs-fedcc540.svg#company6",self.location).href}],Z=X.map(e=>`
       <li class="company-list__item">
         <a class="company-list__link" href="#">
           <svg width="${e.width}" height="${e.height}">
@@ -110,7 +110,7 @@ function F(){N.textContent=f,u.classList.remove("is-hidden"),document.body.class
           </svg>
         </a>
       </li>
-    `).join("");Q.innerHTML=X;const Z=document.querySelector(".our-work-list"),ee=[{src:new URL("/webstudio-vite-js/assets/work1-b062ba09.jpg",self.location).href,alt:"Робота за комп'ютером",title:"Десктопні додатки",width:370},{src:new URL("/webstudio-vite-js/assets/work2-592f2ac7.jpg",self.location).href,alt:"Робота за телефоном",title:"Мобільні додатки",width:370},{src:new URL("/webstudio-vite-js/assets/work3-98cf051d.jpg",self.location).href,alt:"Робота за планшетом",title:"Дизайнерські рішення",width:370}],se=ee.map(e=>`
+    `).join("");V.innerHTML=Z;const ee=document.querySelector(".our-work-list"),se=[{src:new URL("/webstudio-vite-js/assets/work1-b062ba09.jpg",self.location).href,alt:"Робота за комп'ютером",title:"Десктопні додатки",width:370},{src:new URL("/webstudio-vite-js/assets/work2-592f2ac7.jpg",self.location).href,alt:"Робота за телефоном",title:"Мобільні додатки",width:370},{src:new URL("/webstudio-vite-js/assets/work3-98cf051d.jpg",self.location).href,alt:"Робота за планшетом",title:"Дизайнерські рішення",width:370}],te=se.map(e=>`
       <li class="our-work-list__item">
         <img 
           src="${e.src}" 
@@ -122,4 +122,4 @@ function F(){N.textContent=f,u.classList.remove("is-hidden"),document.body.class
           <p class="our-work-list__title">${e.title}</p>
         </div>
       </li>
-    `).join("");Z.innerHTML=se;
+    `).join("");ee.innerHTML=te;
