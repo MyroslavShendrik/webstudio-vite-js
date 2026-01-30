@@ -65,6 +65,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 15px;
@@ -995,7 +999,6 @@ body {
 .our-developers-list {
   align-items: center;
   justify-content: flex-start;
-  scroll-behavior: auto;
   outline: 1px tomato solid;
   height: 503px;
   /* ===== ДОДАНО ДЛЯ КОРЕКТНОЇ ШИРИНИ З УРАХУВАННЯМ SCROLL ===== */

@@ -12,8 +12,8 @@ let currentDeveloperName = "";
 console.log("typeof null:", typeof null);
 console.log("dataDevelopersList:",dataDevelopersList);
 //! 2.1 Пошук всіх необхідних елементів
-const developersList = document.querySelector(".our-developers-list");
-// console.log("developersList:",developersList);
+const developersList = document.querySelector(".our-developers-list__item");
+console.log("developersList:",developersList);
 const addDeveloperButton = document.querySelector(".our-developers__button");
 // console.log("addDeveloperButton:",addDeveloperButton);
 const formTitle = document.querySelector(".form-add-edit-developer__title");
