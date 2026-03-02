@@ -1,102 +1,78 @@
-
 console.log(
-    '%c Додаємо/Редагуємо/Видаляємо розробників в секції "Наша команда" ',
-    'color: white; background-color: #D33F49',
+  '%c Додаємо/Редагуємо/Видаляємо розробників в секції "Наша команда"',
+  'color: white; background-color: #D33F49'
 );
-// localStorage.getItem("dataDevelopers")
-//! 1.1 Взяти з localStorage дані які вже у нас є! 
-//! 1.2 Перетворити дані, які ми взяли з LocalStorage на масив об'єктів
-//! 1.3 Записати це в якусь зміну
-let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+
+//! 1️⃣ Дані
+let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers")) || [];
 let currentDeveloperName = "";
-console.log("typeof null:", typeof null);
-console.log("dataDevelopersList:",dataDevelopersList);
-//! 2.1 Пошук всіх необхідних елементів
-const developersList = document.querySelector(".our-developers-list__item");
-console.log("developersList:",developersList);
+
+//! 2️⃣ Пошук DOM
+const developersList = document.querySelector(".our-developers-list");
 const addDeveloperButton = document.querySelector(".our-developers__button");
-// console.log("addDeveloperButton:",addDeveloperButton);
+
 const formTitle = document.querySelector(".form-add-edit-developer__title");
-// console.log("formTitle:",formTitle);
 const modalAddEditDeveloper = document.querySelector("[data-modal-add-edit-developer]");
-// console.log("modalAddEditDeveloper:",modalAddEditDeveloper);
 const buttonDeleteDeveloper = document.querySelector(".modal-add-edit-developer__button-delete");
-// console.log("buttonDeleteDeveloper:",buttonDeleteDeveloper);
-const formAddEditDeveloper = document.querySelector(".form-add-edit-developer");  
+
+const formAddEditDeveloper = document.querySelector(".form-add-edit-developer");
 const buttonCancelDeveloper = document.getElementById("button-cancel");
-const imgDeveloper = document.querySelectorAll(".img-developer");
-// console.log("imgDeveloper:",imgDeveloper);
-const buttonSumbitDeveloper = document.querySelector(".form-add-edit-developer__button-submit");
-// console.log("buttonSumbitDeveloper:",buttonSumbitDeveloper);
-const imgFormDeveloper = document.querySelector(".form-add-edit-developer__img")
-console.log("imgFormDeveloper:",imgFormDeveloper);
+
+const buttonSubmitDeveloper = document.querySelector(".form-add-edit-developer__button-submit");
+
+const imgFormDeveloper = document.querySelector(".form-add-edit-developer__img");
+
 const inputDeveloperName = document.querySelector(".form-add-edit-developer__input-developer-name");
 const inputDeveloperPosition = document.querySelector(".form-add-edit-developer__input-developer-position");
-const confirmModal = document.querySelector('[data-modal-confirm-delete]');
-const confirmYesBtn = document.getElementById('confirm-delete-yes');
-const confirmNoBtn = document.getElementById('confirm-delete-no');
-const confirmDevName = document.getElementById('confirm-dev-name');
-//! 2.2 Змінні для поточної роботи
-//! 3 надати слухачів подій
+
+const confirmModal = document.querySelector("[data-modal-confirm-delete]");
+const confirmYesBtn = document.getElementById("confirm-delete-yes");
+const confirmNoBtn = document.getElementById("confirm-delete-no");
+const confirmDevName = document.getElementById("confirm-dev-name");
+
+//! 3️⃣ Слухачі подій
+
 addDeveloperButton.addEventListener("click", addDeveloper);
-formAddEditDeveloper.addEventListener("submit", sumbitModalAddEditDeveloper);
+
+formAddEditDeveloper.addEventListener("submit", submitModalAddEditDeveloper);
+
 buttonCancelDeveloper.addEventListener("click", closeModal);
-imgDeveloper.forEach((img) => {
-  img.addEventListener("click", editDeleteDeveloper)
-  console.log("click on:", img);
+
+// ⭐ делегування кліку на картки
+developersList.addEventListener("click", function (event) {
+  if (event.target.classList.contains("our-developers-list__img")) {
+    editDeleteDeveloper(event);
+  }
 });
-buttonDeleteDeveloper.addEventListener('click', openConfirmModal);
 
-//! Кнопка "Ні" у модалці підтвердження
-confirmNoBtn.addEventListener('click', closeConfirmModal);
+buttonDeleteDeveloper.addEventListener("click", openConfirmModal);
 
-//! Кнопка "Так" у модалці підтвердження
-confirmYesBtn.addEventListener('click',  deleteDeveloper)
+confirmNoBtn.addEventListener("click", closeConfirmModal);
+confirmYesBtn.addEventListener("click", deleteDeveloper);
 
+//! 4️⃣ Функції
 
-// imgDeveloper.addEventListener("click", editDeleteDeveloper);
-//! 4 блок функцій 
-//! Додає розробника
-function addDeveloper(){
-console.log("додаємо нового розробника")
-//! 4.1.1 заміна контенту заголовка модального вікна, приховуємо зайві елементи
-formTitle.textContent = "Додати розробника";
-buttonSumbitDeveloper.textContent ="Додати"
-buttonDeleteDeveloper.style.display = 'none';
+//! ДОДАТИ
+function addDeveloper() {
+  formTitle.textContent = "Додати розробника";
+  buttonSubmitDeveloper.textContent = "Додати";
+  buttonDeleteDeveloper.style.display = "none";
 
-//! 4.1.2 відкриття модального вікна з формою для збирання даних
-toggleModalAddEditDeveloper() 
-};
-//! редагує розробника 
-function editDeleteDeveloper(event){
-  console.log("Вікно редагування")
-  //! 4.1.1 заміна контенту заголовка модального вікна, відкриваємо необхідні елементи
+  inputDeveloperName.value = "";
+  inputDeveloperPosition.value = "";
+
+  toggleModalAddEditDeveloper();
+}
+
+//! РЕДАГУВАННЯ
+function editDeleteDeveloper(event) {
+
   formTitle.textContent = "Редагування розробника";
-  buttonSumbitDeveloper.textContent ="Редагувати"
-  buttonDeleteDeveloper.style.display = 'block';
-  //! при натисканні на розробника треба, щоб підставлялось його зображення
-  // imgFormDeveloper.src = event.currentTarget.src;//! тут у нас помилка
-  // imgFormDeveloper.src = event.target.currentSrc;
-  console.log("event.currentTarget:",event.target.currentTarget);
-  console.log("typyof imgFormDeveloper:",typeof imgFormDeveloper);
-  //! стратегічна задача (що робимо?)
-  //! 1. зробити однаковим розміри зображення в модальному вікні 
-  //! 2. підлаштувати розмір зобрадення таким чином, щоб модальне вікно віповідало висоті екрана
-  //? тактична задача var1 (як робимо?)
-  //? 1. змінити в файлі scss стилізації модального вікна. Зображення та його властивість width, так щоб вона підходила всім версткам стилізації
-  //todo тактична задача var2 (як робимо?)
-  //todo забираємо дані з localStorage в dataDevelopersList
+  buttonSubmitDeveloper.textContent = "Редагувати";
+  buttonDeleteDeveloper.style.display = "block";
+
   dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
-  console.log("dataDevelopersList:", dataDevelopersList);
-  //todo знайти об'єкт з яким треба взаємодіяти при кліку на кнопці редагування
-  //todo alt та p можна знайти об'єкт за допомогою значення alt порівнюючи з name
-    console.log("event.target:", event.target)
-    console.log("event.target.alt:",event.target.alt)
-    console.log("event.target.name:",event.target.name)
-    //todo знайти в масиві об'єктів об'єкт на якому відбулася дія  за допомогою порівняння event.target.alt з властивістю об'єкта name
-    console.log("event.currentTarget:",event.currentTarget);
-  //todo після того як  ми знайшли об'єкт розробника використати 3 властивості (name, position, default) 
-  //todo потім ці дані підставити в відповідні поля форми редагування
+
   const editableDeveloper = dataDevelopersList.find(
     developer => developer.name === event.target.alt
   );
@@ -105,116 +81,89 @@ function editDeleteDeveloper(event){
 
   inputDeveloperName.value = editableDeveloper.name;
   inputDeveloperPosition.value = editableDeveloper.position;
+
   imgFormDeveloper.src = editableDeveloper.images.default;
-  toggleModalAddEditDeveloper() 
+
+  toggleModalAddEditDeveloper();
 }
 
-function deleteDeveloper(event){
-dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
-console.log("dataDevelopersList 1:",dataDevelopersList);
-//! знайти об'єкт
-  // const editableDeveloper = dataDevelopersList.find(
-  //   developer => developer.name === currentDeveloperName
-  // );
-  // console.log("editableDeveloper:",editableDeveloper);
-//! видалити об'єкт 
+//! ВИДАЛЕННЯ
+function deleteDeveloper() {
+
+  dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+
   dataDevelopersList = dataDevelopersList.filter(
     developer => developer.name !== currentDeveloperName
   );
-console.log("dataDevelopersList 2:",dataDevelopersList);
-   localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
-   
-   toggleModalAddEditDeveloper();
-   //! перезавантажити сторінку \
-   //! var 1 залишає застосунок в тому місці де відбулась подія 
-   location.reload()
-   //! var 2 скидає всю програму - начебто користувач натиснув F5
-  //  window.location.href = window.location.href;
-};
 
-//! Закривання модально вікна при стоворенні нового розробника 
+  localStorage.setItem(
+    "dataDevelopers",
+    JSON.stringify(dataDevelopersList, null, 2)
+  );
+
+  toggleModalAddEditDeveloper();
+  location.reload();
+}
+
+//! SUBMIT ФОРМИ
+function submitModalAddEditDeveloper(event) {
+
+  dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+
+  if (buttonSubmitDeveloper.textContent === "Додати") {
+
+    const developerObject = {
+      name: inputDeveloperName.value,
+      position: inputDeveloperPosition.value,
+      images: {
+        default: imgFormDeveloper.src,
+      },
+    };
+
+    dataDevelopersList.push(developerObject);
+  }
+
+  if (buttonSubmitDeveloper.textContent === "Редагувати") {
+
+    const editableDeveloper = dataDevelopersList.find(
+      developer => developer.name === currentDeveloperName
+    );
+
+    editableDeveloper.name = inputDeveloperName.value;
+    editableDeveloper.position = inputDeveloperPosition.value;
+  }
+
+  localStorage.setItem(
+    "dataDevelopers",
+    JSON.stringify(dataDevelopersList, null, 2)
+  );
+
+  toggleModalAddEditDeveloper();
+}
+
+//! MODAL
+
+function toggleModalAddEditDeveloper() {
+  modalAddEditDeveloper.classList.toggle("is-hidden");
+  document.body.classList.toggle("no-scroll");
+}
+
 function closeModal() {
   toggleModalAddEditDeveloper();
 }
 
-//! відкривання/закривання модального вікна для додавання/редагування розробника
-function toggleModalAddEditDeveloper(){
-    console.log("відкривання/закривання модального вікна для додавання/редагування розробника");
-    modalAddEditDeveloper.classList.toggle("is-hidden");
-    document.body.classList.toggle("no-scroll");
+//! CONFIRM DELETE
 
-};
-//! підтвердження даних в формі модальних  вікон ДОДАТИ/РЕДАГУВАТИ 
-function sumbitModalAddEditDeveloper(event){
-//! блокуємо перезавантаження сторінки 
-    // event.preventDefault(); //! НЕ  блокуємо перезавантаження сторінки 
-//! 4.3.1 стягнути найсвіжіші дані з LocalStorage в масив об'єктів всіх користувачів
-dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
-if (buttonSumbitDeveloper.textContent === "Додати"){
-  const developerObject = {
-name: formAddEditDeveloper.developerName.value,
-position: formAddEditDeveloper.developerPosition.value,
-images: {
-      desktop: [
-        new URL("../images/sample-desktop-1x.jpg", import.meta.url).href + " 1x,",
-        new URL("../images/sample-desktop-2x.jpg", import.meta.url).href + " 2x,",
-        new URL("../images/sample-desktop-3x.jpg", import.meta.url).href + " 3x"
-      ],
-      tablet: [
-        new URL("../images/sample-tablet-1x.jpg", import.meta.url).href + " 1x,", 
-        new URL("../images/sample-tablet-2x.jpg", import.meta.url).href + " 2x,",
-        new URL("../images/sample-tablet-3x.jpg", import.meta.url).href + " 3x"
-      ],
-      mobile: [
-        new URL("../images/sample-mobile-1x.jpg", import.meta.url).href + " 1x,",
-        new URL("../images/sample-mobile-2x.jpg", import.meta.url).href + " 2x,",
-        new URL("../images/sample-mobile-3x.jpg", import.meta.url).href + " 3x"
-      ],
-      default: new URL("../images/sample-mobile-1x.jpg", import.meta.url).href ,
-    },
-    icons: [
-      new URL("../images/symboldefs.svg#instagram", import.meta.url).href,
-      new URL("../images/symboldefs.svg#twitter", import.meta.url).href,
-      new URL("../images/symboldefs.svg#facebook", import.meta.url).href,
-      new URL("../images/symboldefs.svg#linkedin", import.meta.url).href,
-    ],
-};
+function openConfirmModal(event) {
+  event.preventDefault();
 
-console.log("developerObject:", developerObject);
-//! 4.3.3 додаємо новий об'єкт до масиву об'єктів
-dataDevelopersList.push(developerObject);
-console.log("ПІСЛЯ  dataDevelopersList:", dataDevelopersList);
-}
-if (buttonSumbitDeveloper.textContent === "Редагувати") {
-  const newDeveloperName = inputDeveloperName.value;
-  const newDeveloperPosition = inputDeveloperPosition.value;
-
-  const editableDeveloper = dataDevelopersList.find(
-    developer => developer.name === currentDeveloperName
-  );
-  editableDeveloper.name = newDeveloperName;
-  editableDeveloper.position = newDeveloperPosition;
-}
-
-console.log("Після dataDevelopersList:", dataDevelopersList);
-//! 4.3.4 зберегти змінені дані в LocalStorage
- localStorage.setItem("dataDevelopers", JSON.stringify(dataDevelopersList, null, 2));
-
- //! 4.3.5 закрити модальне вікно з формою для збирання даних
- toggleModalAddEditDeveloper()
-}
-//! план дій для видалення розробника 
-//! надати слухача подій на кнопку видалення 
-function openConfirmModal() {
-  // event.preventDefault();
   confirmDevName.textContent = currentDeveloperName;
+
   confirmModal.classList.remove("is-hidden");
   document.body.classList.add("no-scroll");
 }
- 
 
 function closeConfirmModal() {
-  confirmModal.classList.add('is-hidden');
-  document.body.classList.remove('no-scroll');
+  confirmModal.classList.add("is-hidden");
+  document.body.classList.remove("no-scroll");
 }
-

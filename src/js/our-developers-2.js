@@ -717,4 +717,4 @@ const markup = dataDevelopersList
   .join("");
 console.log(" markup:", markup);
 developersList.innerHTML = markup;
-lazySizes.loader.checkElems();
+// lazySizes.loader.checkElems();
