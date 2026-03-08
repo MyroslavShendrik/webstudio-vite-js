@@ -41,7 +41,6 @@ import{H as c}from"./social-list-ed51bbca.js";const v=[{title:"УВАГА ДО �
 
   <p class="our-developers-list__text">{{name}}</p>
   <h4 class="our-developers-list__title">{{position}}</h4>
-
   <ul class="our-developers-svg-list">
     {{#each icons}}
     <li class="our-developers-svg-list__item">
