@@ -60,13 +60,13 @@ button {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .container {
@@ -918,13 +918,15 @@ html {
 }
 .our-work {
   display: none;
-  padding-top: 94px;
-  padding-bottom: 94px;
 }
 @media screen and (min-width: 1200px) {
   .our-work {
     display: block;
   }
+}
+.our-work {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 .our-work-title {
@@ -1173,6 +1175,21 @@ html {
     transform: scale(1.1);
   }
 }
+.our-developers-list__item {
+  position: relative;
+}
+
+.our-developers-list__date {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 12px;
+  color: #777;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
 .company {
   padding: 60px 0;
 }
@@ -1214,6 +1231,16 @@ html {
   flex-wrap: _;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  .company .company-list__link {
+    width: 226;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .company .company-list__link {
+    width: 170px;
+  }
+}
 .company .company-list__link {
   width: 210px;
   height: 92px;
@@ -1231,16 +1258,6 @@ html {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
-}
-@media screen and (min-width: 768px) {
-  .company .company-list__link {
-    width: 226;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .company .company-list__link {
-    width: 170px;
-  }
 }
 .company .company-list__link:hover {
   fill: #2196F3;
