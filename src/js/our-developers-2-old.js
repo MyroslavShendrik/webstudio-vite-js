@@ -707,7 +707,6 @@ console.log("Дані збережено у localStorage");
 
 //! забираємо дані в dataDevelopersList з localStorage
 dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
-console.log("JSON.stringify(dataDevelopersList):",JSON.stringify(dataDevelopersList)) 
 console.log("dataDevelopersList:",dataDevelopersList);
 
 //! генеруємо HTML за допомогою Handlebars
