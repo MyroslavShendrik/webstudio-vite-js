@@ -10,30 +10,29 @@ const url =`${BASEURL}${EndPoint}`
 console.log("url:",url);
 // Знаходимо елемент для рендеру
 const developersList = document.querySelector(".our-developers-list");
-
-// function getAllDevelopers() {
-//   fetchAllDevelopers()
-//     .then(developers => renderPosts(developers))
-//     .catch(error => console.log(error));
-// }
-// function fetchAllDevelopers() {
-//   return fetch(url)
-//     .then(res => res.json())
-//     .then(data => data.results);
-// }
-
-
-async function fetchDevelopers() {
-  try{
-    const response = await fetch(url)
-    const developers = await response.json()
-    console.log("developers:",developers)
-    
-    renderDevelopers(developers)
-  } catch(error){
-    console.log("error:",error);
-  }
+//! var 1
+function getAllDevelopers() {
+  fetchAllDevelopers()
+    .then(developers => renderDevelopers(developers))
+    .catch(error => console.log(error));
 }
+function fetchAllDevelopers() {
+  return fetch(url)
+    .then(res => res.json())
+}
+
+//!var2
+// async function fetchDevelopers() {
+//   try{
+//     const response = await fetch(url)
+//     const developers = await response.json()
+//     console.log("developers:",developers)
+    
+//     renderDevelopers(developers)
+//   } catch(error){
+//     console.log("error:",error);
+//   }
+// }
 
 //! генеруємо HTML за допомогою Handlebars
 const template = Handlebars.compile(developerTemplate);
@@ -43,8 +42,9 @@ function renderDevelopers(developers) {
 
     return template(developer);
   }).join("")
-   console.log("markup:",markup);
+  //  console.log("markup:",markup);
    developersList.innerHTML = markup;
 }
 
-fetchDevelopers()
+// fetchDevelopers()
+getAllDevelopers()

@@ -1,32 +1,10 @@
-//! по натиску на кнопку додати розробника: 
-//! 1. Сформувати зміну в яку покладемо об'єкт з новими даними розробника 
-//! 2.використати метод POST, щоб додати новий об'єкт на JSON сервер 
-//? const newAlbum = {
-//?   userId: 1,
-//?   title: "My new album"
-//? };
-
-//? fetch(`${BASE_URL}/${EndPoint}`, {
-//?   method: "POST",
-//?   body: JSON.stringify(newAlbum),
-//?   headers: {
-//?     "Content-Type": "application/json; charset=UTF-8"
-//?   }
-//? })
-//?   .then(res => res.json())
-//?   .then(data => console.log("POST:", data))
-//?   .catch(err => console.log(err));
 console.log(
   '%c Додаємо/Редагуємо/Видаляємо розробників в секції "Наша команда"',
   'color: white; background-color: #D33F49'
 );
 
 //! 1️⃣ Дані
-const BASEURL = "http://localhost:3000/"
-const EndPoint = "developers"
-const url =`${BASEURL}${EndPoint}`
-console.log("url:",url);
-// let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers")) || [];
+let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers")) || [];
 let currentDeveloperName = "";
 
 
@@ -100,9 +78,8 @@ function editDeleteDeveloper(event) {
   buttonSubmitDeveloper.textContent = "Редагувати";
   buttonDeleteDeveloper.style.display = "block";
 
-  // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
-  dataDevelopersList = fetch("http://localhost:3000/developers");
-  console.log("dataDevelopersList:",dataDevelopersList);
+  dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+
   const editableDeveloper = dataDevelopersList.find(
     developer => developer.name === event.target.alt
   );
@@ -142,7 +119,7 @@ function submitModalAddEditDeveloper(event) {
 
   event.preventDefault();
 
-  // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+  dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 
   if (buttonSubmitDeveloper.textContent === "Додати") {
 
@@ -155,28 +132,13 @@ function submitModalAddEditDeveloper(event) {
       images: {
         default: imgFormDeveloper.src || "./images/developers/default.jpg"
       },
-      icons: [
-        "/webstudio-vite-js/images/symboldefs.svg#instagram",
-        "/webstudio-vite-js/images/symboldefs.svg#twitter",
-        "/webstudio-vite-js/images/symboldefs.svg#facebook",
-        "/webstudio-vite-js/images/symboldefs.svg#linkedin"
-      ],
 
       //! ⭐ НОВЕ
       date: new Date().toLocaleString()
+
     };
 
-    // dataDevelopersList.push(developerObject);
-    fetch(`${url}`, {
-   method: "POST",
-   body: JSON.stringify(developerObject),
-   headers: {
-     "Content-Type": "application/json; charset=UTF-8"
-   }
- })
-   .then(res => res.json())
-   .then(data => console.log("POST:", data))
-   .catch(err => console.log(err));
+    dataDevelopersList.push(developerObject);
   }
 
 
