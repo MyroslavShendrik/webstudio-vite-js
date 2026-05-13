@@ -144,40 +144,46 @@ function submitModalAddEditDeveloper(event) {
 
   // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 
-  if (buttonSubmitDeveloper.textContent === "Додати") {
+if (buttonSubmitDeveloper.textContent === "Додати") {
 
-    const developerObject = {
+  const developerObject = {
+    name: inputDeveloperName.value,
+    position: inputDeveloperPosition.value,
+    images: {
+      default:
+        imgFormDeveloper.getAttribute("src") ||
+        "./images/developers/default.jpg"
+    },
+    icons: [
+      "/webstudio-vite-js/images/symboldefs.svg#instagram",
+      "/webstudio-vite-js/images/symboldefs.svg#twitter",
+      "/webstudio-vite-js/images/symboldefs.svg#facebook",
+      "/webstudio-vite-js/images/symboldefs.svg#linkedin"
+    ],
+    date: new Date().toLocaleString()
+  };
 
-      name: inputDeveloperName.value,
+  fetch(url, {
+    method: "POST",
+    body: JSON.stringify(developerObject),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8"
+    }
+  })
+    .then(res => res.json())
+    .then(data => {
 
-      position: inputDeveloperPosition.value,
+      console.log("POST:", data);
 
-      images: {
-        default: imgFormDeveloper.src || "./images/developers/default.jpg"
-      },
-      icons: [
-        "/webstudio-vite-js/images/symboldefs.svg#instagram",
-        "/webstudio-vite-js/images/symboldefs.svg#twitter",
-        "/webstudio-vite-js/images/symboldefs.svg#facebook",
-        "/webstudio-vite-js/images/symboldefs.svg#linkedin"
-      ],
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          dataDevelopersList = data;
+        });
 
-      //! ⭐ НОВЕ
-      date: new Date().toLocaleString()
-    };
-
-    // dataDevelopersList.push(developerObject);
-    fetch(`${url}`, {
-   method: "POST",
-   body: JSON.stringify(developerObject),
-   headers: {
-     "Content-Type": "application/json; charset=UTF-8"
-   }
- })
-   .then(res => res.json())
-   .then(data => console.log("POST:", data))
-   .catch(err => console.log(err));
-  }
+    })
+    .catch(err => console.log(err));
+}
 
 
   if (buttonSubmitDeveloper.textContent === "Редагувати") {
