@@ -29,6 +29,7 @@ console.log("url:",url);
 // let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers")) || [];
 let currentDeveloperName = "";
 let dataDevelopersList = null;
+let editableDeveloper = "";
 //*: NEW
 //! Зчитуємо дані з json-server та зберігаємо їх в Масив Об'єктів: dataDevelopersList
 function fetchAllDevelopers(){
@@ -109,12 +110,11 @@ function editDeleteDeveloper(event) {
   buttonDeleteDeveloper.style.display = "block";
 
   // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
-  dataDevelopersList = fetch("http://localhost:3000/developers");
   console.log("dataDevelopersList:",dataDevelopersList);
-  const editableDeveloper = dataDevelopersList.find(
+   editableDeveloper = dataDevelopersList.find(
     developer => developer.name === event.target.alt
   );
-
+  console.log("об'єкт, що редагується:",editableDeveloper);
   currentDeveloperName = editableDeveloper.name;
 
   inputDeveloperName.value = editableDeveloper.name;
@@ -148,7 +148,7 @@ function deleteDeveloper() {
 //! SUBMIT ФОРМИ
 function submitModalAddEditDeveloper(event) {
 
-  // event.preventDefault(); //! скасовує перезавантеження сторінки 
+  event.preventDefault(); //! скасовує перезавантеження сторінки 
 
   // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 
@@ -238,24 +238,45 @@ fetch(url, {
 
 
   if (buttonSubmitDeveloper.textContent === "Редагувати") {
-
-    const editableDeveloper = dataDevelopersList.find(
+ console.log("dataDevelopersList:",dataDevelopersList);
+     editableDeveloper = dataDevelopersList.find(
       developer => developer.name === currentDeveloperName
     );
-
+ console.log("editableDeveloper:",editableDeveloper)
     editableDeveloper.name = inputDeveloperName.value;
 
     editableDeveloper.position = inputDeveloperPosition.value;
 
     //! ⭐ ФІКС КАРТИНКИ
     editableDeveloper.images.default = imgFormDeveloper.src;
+
   }
 
+//todo OLD
+  // localStorage.setItem(
+  //   "dataDevelopers",
+  //   JSON.stringify(dataDevelopersList, null, 2)
+  // );
+//* NEW 
+//! ================= UPDATE (PUT) =================
+console.log("editableDeveloper:",editableDeveloper)
+let developerId = editableDeveloper.id;
+console.log("developerId:",developerId);
+// const requestBody ={
+//   name: inputDeveloperName.value,
+//   position: inputDeveloperPosition.value
+// }
 
-  localStorage.setItem(
-    "dataDevelopers",
-    JSON.stringify(dataDevelopersList, null, 2)
-  );
+// fetch(`${BASE_URL}/${EndPoint}/${albumId}`, {
+//   method: "PUT",
+//   body: JSON.stringify(requestBody),
+//   headers: {
+//     "Content-Type": "application/json; charset=UTF-8"
+//   }
+// })
+//   .then(res => res.json())
+//   .then(data => console.log("PUT:", data))
+//   .catch(err => console.log(err));
 
   toggleModalAddEditDeveloper();
 }
