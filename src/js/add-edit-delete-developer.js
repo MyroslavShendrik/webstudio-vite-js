@@ -153,14 +153,44 @@ function submitModalAddEditDeveloper(event) {
   // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 
 if (buttonSubmitDeveloper.textContent === "Додати") {
-
-  const developerObject = {
+//todo OLD 
+  // const developerObject = {
+  //   name: inputDeveloperName.value,
+  //   position: inputDeveloperPosition.value,
+  //   images: {
+  //     default:
+  //       imgFormDeveloper.getAttribute("src") ||
+  //       "./images/developers/default.jpg"
+  //   },
+  //   icons: [
+  //     "/webstudio-vite-js/images/symboldefs.svg#instagram",
+  //     "/webstudio-vite-js/images/symboldefs.svg#twitter",
+  //     "/webstudio-vite-js/images/symboldefs.svg#facebook",
+  //     "/webstudio-vite-js/images/symboldefs.svg#linkedin"
+  //   ],
+  //   date: new Date().toLocaleString()
+  // };
+  //* NEW
+  const requestBody = {
     name: inputDeveloperName.value,
     position: inputDeveloperPosition.value,
     images: {
-      default:
-        imgFormDeveloper.getAttribute("src") ||
-        "./images/developers/default.jpg"
+      desktop: [
+        "/webstudio-vite-js/images/sample-desktop-1x.jpg 1x,",
+        "/webstudio-vite-js/images/sample-desktop-2x.jpg 2x,",
+        "/webstudio-vite-js/images/sample-desktop-3x.jpg 3x"
+      ],
+      tablet: [
+        "/webstudio-vite-js/images/sample-tablet-1x.jpg 1x,",
+        "/webstudio-vite-js/images/sample-tablet-2x.jpg 2x,",
+        "/webstudio-vite-js/images/sample-tablet-3x.jpg 3x"
+      ],
+      mobile: [
+        "/webstudio-vite-js/images/sample-mobile-1x.jpg 1x,",
+        "/webstudio-vite-js/images/sample-mobile-2x.jpg 2x,",
+        "/webstudio-vite-js/images/sample-mobile-3x.jpg 3x"
+      ],
+      default: "/webstudio-vite-js/images/sample-mobile-1x.jpg"
     },
     icons: [
       "/webstudio-vite-js/images/symboldefs.svg#instagram",
@@ -169,40 +199,6 @@ if (buttonSubmitDeveloper.textContent === "Додати") {
       "/webstudio-vite-js/images/symboldefs.svg#linkedin"
     ],
     date: new Date().toLocaleString()
-  };
-  
-// const requestBody =  {
-//     "name": "Михайло Єрмаков-5",
-//     "position": "UI Designer-5",
-//     "images": {
-//       "desktop": [
-//         "/webstudio-vite-js/images/muhailo5-desktop-1x.jpg 1x,",
-//         "/webstudio-vite-js/images/muhailo5-desktop-2x.jpg 2x,",
-//         "/webstudio-vite-js/images/muhailo5-desktop-3x.jpg 3x"
-//       ],
-//       "tablet": [
-//         "/webstudio-vite-js/images/muhailo5-tablet-1x.jpg 1x,",
-//         "/webstudio-vite-js/images/muhailo5-tablet-2x.jpg 2x,",
-//         "/webstudio-vite-js/images/muhailo5-tablet-3x.jpg 3x"
-//       ],
-//       "mobile": [
-//         "/webstudio-vite-js/images/muhailo5-mobile-1x.jpg 1x,",
-//         "/webstudio-vite-js/images/muhailo5-mobile-2x.jpg 2x,",
-//         "/webstudio-vite-js/images/muhailo5-mobile-3x.jpg 3x"
-//       ],
-//       "default": "/webstudio-vite-js/images/muhailo5-mobile-1x.jpg"
-//     },
-//     "icons": [
-//       "/webstudio-vite-js/images/symboldefs.svg#instagram",
-//       "/webstudio-vite-js/images/symboldefs.svg#twitter",
-//       "/webstudio-vite-js/images/symboldefs.svg#facebook",
-//       "/webstudio-vite-js/images/symboldefs.svg#linkedin"
-//     ],
-//     "id": "8x8L5lwt4BM"
-//   }
-  const requestBody = {
-    name: inputDeveloperName.value,
-    position: inputDeveloperPosition.value,
   }
   console.log("requestBody:",requestBody);
 //! ================= CREATE (POST) =================
@@ -217,6 +213,7 @@ fetch(url, {
   .then(data => console.log("POST:", data))
   .catch(err => console.log(err));
 }
+//! мій код з помилкою 
 //   fetch(url, {
 //     method: "POST",
 //     body: JSON.stringify(developerObject),
