@@ -28,8 +28,16 @@ const url =`${BASEURL}${EndPoint}`
 console.log("url:",url);
 // let dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers")) || [];
 let currentDeveloperName = "";
-
-
+let dataDevelopersList = null;
+//*: NEW
+//! Зчитуємо дані з json-server та зберігаємо їх в Масив Об'єктів: dataDevelopersList
+function fetchAllDevelopers(){
+  return fetch(url)
+  .then(res => res.json())
+  .then(data => dataDevelopersList = data);
+}
+fetchAllDevelopers()
+console.log("dataDevelopersList:",dataDevelopersList);
 //! 2️⃣ Пошук DOM
 const developersList = document.querySelector(".our-developers-list");
 const addDeveloperButton = document.querySelector(".our-developers__button");
