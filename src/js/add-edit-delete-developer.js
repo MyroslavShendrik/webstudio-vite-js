@@ -87,7 +87,7 @@ confirmYesBtn.addEventListener("click", deleteDeveloper);
 
 //! ДОДАТИ
 function addDeveloper() {
-
+console.log("dataDevelopersList-addDeveloper:",dataDevelopersList);
   formTitle.textContent = "Додати розробника";
   buttonSubmitDeveloper.textContent = "Додати";
   buttonDeleteDeveloper.style.display = "none";
@@ -148,7 +148,7 @@ function deleteDeveloper() {
 //! SUBMIT ФОРМИ
 function submitModalAddEditDeveloper(event) {
 
-  event.preventDefault();
+  // event.preventDefault(); //! скасовує перезавантеження сторінки 
 
   // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 
@@ -170,28 +170,74 @@ if (buttonSubmitDeveloper.textContent === "Додати") {
     ],
     date: new Date().toLocaleString()
   };
-
-  fetch(url, {
-    method: "POST",
-    body: JSON.stringify(developerObject),
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8"
-    }
-  })
-    .then(res => res.json())
-    .then(data => {
-
-      console.log("POST:", data);
-
-      fetch(url)
-        .then(res => res.json())
-        .then(data => {
-          dataDevelopersList = data;
-        });
-
-    })
-    .catch(err => console.log(err));
+  
+// const requestBody =  {
+//     "name": "Михайло Єрмаков-5",
+//     "position": "UI Designer-5",
+//     "images": {
+//       "desktop": [
+//         "/webstudio-vite-js/images/muhailo5-desktop-1x.jpg 1x,",
+//         "/webstudio-vite-js/images/muhailo5-desktop-2x.jpg 2x,",
+//         "/webstudio-vite-js/images/muhailo5-desktop-3x.jpg 3x"
+//       ],
+//       "tablet": [
+//         "/webstudio-vite-js/images/muhailo5-tablet-1x.jpg 1x,",
+//         "/webstudio-vite-js/images/muhailo5-tablet-2x.jpg 2x,",
+//         "/webstudio-vite-js/images/muhailo5-tablet-3x.jpg 3x"
+//       ],
+//       "mobile": [
+//         "/webstudio-vite-js/images/muhailo5-mobile-1x.jpg 1x,",
+//         "/webstudio-vite-js/images/muhailo5-mobile-2x.jpg 2x,",
+//         "/webstudio-vite-js/images/muhailo5-mobile-3x.jpg 3x"
+//       ],
+//       "default": "/webstudio-vite-js/images/muhailo5-mobile-1x.jpg"
+//     },
+//     "icons": [
+//       "/webstudio-vite-js/images/symboldefs.svg#instagram",
+//       "/webstudio-vite-js/images/symboldefs.svg#twitter",
+//       "/webstudio-vite-js/images/symboldefs.svg#facebook",
+//       "/webstudio-vite-js/images/symboldefs.svg#linkedin"
+//     ],
+//     "id": "8x8L5lwt4BM"
+//   }
+  const requestBody = {
+    name: inputDeveloperName.value,
+    position: inputDeveloperPosition.value,
+  }
+  console.log("requestBody:",requestBody);
+//! ================= CREATE (POST) =================
+fetch(url, {
+  method: "POST",
+  body: JSON.stringify(requestBody),
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8"
+  }
+})
+  .then(res => res.json())
+  .then(data => console.log("POST:", data))
+  .catch(err => console.log(err));
 }
+//   fetch(url, {
+//     method: "POST",
+//     body: JSON.stringify(developerObject),
+//     headers: {
+//       "Content-Type": "application/json; charset=UTF-8"
+//     }
+//   })
+//     .then(res => res.json())
+//     .then(data => {
+
+//       console.log("POST:", data);
+
+//       fetch(url)
+//         .then(res => res.json())
+//         .then(data => {
+//           dataDevelopersList = data;
+//         });
+
+//     })
+//     .catch(err => console.log(err));
+// }
 
 
   if (buttonSubmitDeveloper.textContent === "Редагувати") {
