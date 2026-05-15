@@ -117,7 +117,7 @@ function deleteDeveloper() {
 //! SUBMIT ФОРМИ
 function submitModalAddEditDeveloper(event) {
 
-  event.preventDefault();
+  // event.preventDefault();
 
   dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 
@@ -186,7 +186,7 @@ function closeModal() {
 
 function openConfirmModal(event) {
 
-  event.preventDefault();
+  // event.preventDefault();
 
   confirmDevName.textContent = currentDeveloperName;
 
