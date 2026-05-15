@@ -128,17 +128,26 @@ function editDeleteDeveloper(event) {
 
 //! ВИДАЛЕННЯ
 function deleteDeveloper() {
+//todo OLD
+  // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 
-  dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+  // dataDevelopersList = dataDevelopersList.filter(
+  //   developer => developer.name !== currentDeveloperName
+  // );
 
-  dataDevelopersList = dataDevelopersList.filter(
-    developer => developer.name !== currentDeveloperName
-  );
+  // localStorage.setItem(
+  //   "dataDevelopers",
+  //   JSON.stringify(dataDevelopersList, null, 2)
+  // );
+//* NEW
+const developerId = editableDeveloper.id
+console.log("developerId видалення :",developerId);
+fetch(`${url}/${developerId}`, {
+  method: "DELETE"
+})
+  .then(res => console.log("DELETE status:", res.status))
+  .catch(err => console.log(err));
 
-  localStorage.setItem(
-    "dataDevelopers",
-    JSON.stringify(dataDevelopersList, null, 2)
-  );
 
   toggleModalAddEditDeveloper();
   location.reload();
