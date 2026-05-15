@@ -148,7 +148,7 @@ function deleteDeveloper() {
 //! SUBMIT ФОРМИ
 function submitModalAddEditDeveloper(event) {
 
-  event.preventDefault(); //! скасовує перезавантеження сторінки 
+  // event.preventDefault(); //! скасовує перезавантеження сторінки 
 
   // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
 
@@ -262,22 +262,23 @@ fetch(url, {
 console.log("editableDeveloper:",editableDeveloper)
 let developerId = editableDeveloper.id;
 console.log("developerId:",developerId);
-// const requestBody ={
-//   name: inputDeveloperName.value,
-//   position: inputDeveloperPosition.value
-// }
 
-// fetch(`${BASE_URL}/${EndPoint}/${albumId}`, {
-//   method: "PUT",
-//   body: JSON.stringify(requestBody),
-//   headers: {
-//     "Content-Type": "application/json; charset=UTF-8"
-//   }
-// })
-//   .then(res => res.json())
-//   .then(data => console.log("PUT:", data))
-//   .catch(err => console.log(err));
+//! ================= UPDATE (PATCH) =================
+const requestBody = {
+  name: inputDeveloperName.value,
+  position:inputDeveloperPosition.value,
+};
 
+fetch(`${url}/${developerId}`, {
+  method: "PATCH",
+  body: JSON.stringify(requestBody),
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8"
+  }
+})
+  .then(res => res.json())
+  .then(data => console.log("PATCH:", data))
+  .catch(err => console.log(err));
   toggleModalAddEditDeveloper();
 }
 
