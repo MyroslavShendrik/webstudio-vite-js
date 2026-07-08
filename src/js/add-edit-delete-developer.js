@@ -185,27 +185,27 @@ if (buttonSubmitDeveloper.textContent === "Додати") {
     position: inputDeveloperPosition.value,
     images: {
       desktop: [
-        "/webstudio-vite-js/images/sample-desktop-1x.jpg 1x,",
-        "/webstudio-vite-js/images/sample-desktop-2x.jpg 2x,",
-        "/webstudio-vite-js/images/sample-desktop-3x.jpg 3x"
+        "images/sample-desktop-1x.jpg 1x,",
+        "images/sample-desktop-2x.jpg 2x,",
+        "images/sample-desktop-3x.jpg 3x"
       ],
       tablet: [
-        "/webstudio-vite-js/images/sample-tablet-1x.jpg 1x,",
-        "/webstudio-vite-js/images/sample-tablet-2x.jpg 2x,",
-        "/webstudio-vite-js/images/sample-tablet-3x.jpg 3x"
+        "images/sample-tablet-1x.jpg 1x,",
+        "images/sample-tablet-2x.jpg 2x,",
+        "images/sample-tablet-3x.jpg 3x"
       ],
       mobile: [
-        "/webstudio-vite-js/images/sample-mobile-1x.jpg 1x,",
-        "/webstudio-vite-js/images/sample-mobile-2x.jpg 2x,",
-        "/webstudio-vite-js/images/sample-mobile-3x.jpg 3x"
+        "images/sample-mobile-1x.jpg 1x,",
+        "images/sample-mobile-2x.jpg 2x,",
+        "images/sample-mobile-3x.jpg 3x"
       ],
-      default: "/webstudio-vite-js/images/sample-mobile-1x.jpg"
+      default: "images/sample-mobile-1x.jpg"
     },
     icons: [
-      "/webstudio-vite-js/images/symboldefs.svg#instagram",
-      "/webstudio-vite-js/images/symboldefs.svg#twitter",
-      "/webstudio-vite-js/images/symboldefs.svg#facebook",
-      "/webstudio-vite-js/images/symboldefs.svg#linkedin"
+      "images/symboldefs.svg#instagram",
+      "images/symboldefs.svg#twitter",
+      "images/symboldefs.svg#facebook",
+      "images/symboldefs.svg#linkedin"
     ],
     date: new Date().toLocaleString()
   }

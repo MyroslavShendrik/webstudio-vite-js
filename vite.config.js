@@ -7,6 +7,7 @@ import handlebars from 'vite-plugin-handlebars'; // <-- додали
 export default defineConfig({
   base: '/webstudio-vite-js/',
   root: 'src',
+  publicDir: '../public', //! ❗️❗️❗️ ВАЖЛИВО: для завнтаження зображень на GitHub
   build: {
     rollupOptions: {
       input: glob.sync('./src/**/*.html'),
