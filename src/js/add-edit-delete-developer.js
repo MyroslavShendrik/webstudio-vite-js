@@ -42,7 +42,7 @@ console.log("dataDevelopersList:",dataDevelopersList);
 //! 2️⃣ Пошук DOM
 const developersList = document.querySelector(".our-developers-list");
 const addDeveloperButton = document.querySelector(".our-developers__button");
-
+console.log(addDeveloperButton);
 const formTitle = document.querySelector(".form-add-edit-developer__title");
 const modalAddEditDeveloper = document.querySelector("[data-modal-add-edit-developer]");
 const buttonDeleteDeveloper = document.querySelector(".modal-add-edit-developer__button-delete");
@@ -79,7 +79,7 @@ developersList.addEventListener("click", function (event) {
 
 buttonDeleteDeveloper.addEventListener("click", openConfirmModal);
 
-confirmNoBtn.addEventListener("click", closeConfirmModal);
+confirmNoBtn.addEventListener("click", closeModal);
 confirmYesBtn.addEventListener("click", deleteDeveloper);
 
 
@@ -88,15 +88,17 @@ confirmYesBtn.addEventListener("click", deleteDeveloper);
 
 //! ДОДАТИ
 function addDeveloper() {
-console.log("dataDevelopersList-addDeveloper:",dataDevelopersList);
+console.log("Натиснули Додати");
+  editableDeveloper = null;
+  currentDeveloperName = "";
+
   formTitle.textContent = "Додати розробника";
   buttonSubmitDeveloper.textContent = "Додати";
   buttonDeleteDeveloper.style.display = "none";
 
   inputDeveloperName.value = "";
   inputDeveloperPosition.value = "";
-
-  // imgFormDeveloper.src = "./images/default.jpg";
+  imgFormDeveloper.src = "/images/default.jpg";
 
   toggleModalAddEditDeveloper();
 }
@@ -127,30 +129,37 @@ function editDeleteDeveloper(event) {
 
 
 //! ВИДАЛЕННЯ
-function deleteDeveloper() {
-//todo OLD
-  // dataDevelopersList = JSON.parse(localStorage.getItem("dataDevelopers"));
+async function deleteDeveloper() {
 
-  // dataDevelopersList = dataDevelopersList.filter(
-  //   developer => developer.name !== currentDeveloperName
-  // );
+  try {
 
-  // localStorage.setItem(
-  //   "dataDevelopers",
-  //   JSON.stringify(dataDevelopersList, null, 2)
-  // );
-//* NEW
-const developerId = editableDeveloper.id
-console.log("developerId видалення :",developerId);
-fetch(`${url}/${developerId}`, {
-  method: "DELETE"
-})
-  .then(res => console.log("DELETE status:", res.status))
-  .catch(err => console.log(err));
+    const developerId = editableDeveloper.id;
+console.log("editableDeveloper:", editableDeveloper);
+console.log("developerId:", developerId);
+console.log("DELETE URL:", `${url}/${developerId}`);
+    const response = await fetch(`${url}/${developerId}`, {
+      method: "DELETE",
+    });
 
+    if (!response.ok) {
+      throw new Error(`Помилка видалення: ${response.status}`);
+    }
 
-  toggleModalAddEditDeveloper();
-  location.reload();
+    closeConfirmModal();
+    closeModal();
+
+    await fetchAllDevelopers();
+
+    location.reload();
+
+  } catch (error) {
+
+    console.error("Помилка deleteDeveloper:", error);
+
+    alert("Не вдалося видалити розробника.");
+
+  }
+
 }
 
 
@@ -301,11 +310,6 @@ function toggleModalAddEditDeveloper() {
 
 }
 
-function closeModal() {
-
-  toggleModalAddEditDeveloper();
-
-}
 
 
 //! CONFIRM DELETE
@@ -321,9 +325,15 @@ function openConfirmModal(event) {
 
 }
 
-function closeConfirmModal() {
+function closeModal() {
 
-  confirmModal.classList.add("is-hidden");
-  document.body.classList.remove("no-scroll");
+  inputDeveloperName.value = "";
+  inputDeveloperPosition.value = "";
+  imgFormDeveloper.src = "/images/default.jpg";
+
+  editableDeveloper = null;
+  currentDeveloperName = "";
+
+  toggleModalAddEditDeveloper();
 
 }
