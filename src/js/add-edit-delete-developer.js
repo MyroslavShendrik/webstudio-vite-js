@@ -79,7 +79,7 @@ developersList.addEventListener("click", function (event) {
 
 buttonDeleteDeveloper.addEventListener("click", openConfirmModal);
 
-confirmNoBtn.addEventListener("click", closeModal);
+confirmNoBtn.addEventListener("click", closeConfirmModal);
 confirmYesBtn.addEventListener("click", deleteDeveloper);
 
 
@@ -130,13 +130,11 @@ function editDeleteDeveloper(event) {
 
 //! ВИДАЛЕННЯ
 async function deleteDeveloper() {
-
   try {
-
     const developerId = editableDeveloper.id;
-console.log("editableDeveloper:", editableDeveloper);
-console.log("developerId:", developerId);
-console.log("DELETE URL:", `${url}/${developerId}`);
+
+    console.log("DELETE:", `${url}/${developerId}`);
+
     const response = await fetch(`${url}/${developerId}`, {
       method: "DELETE",
     });
@@ -145,21 +143,15 @@ console.log("DELETE URL:", `${url}/${developerId}`);
       throw new Error(`Помилка видалення: ${response.status}`);
     }
 
-    closeConfirmModal();
-    closeModal();
-
-    await fetchAllDevelopers();
-
-    location.reload();
+closeConfirmModal();
+closeModal();
+await fetchAllDevelopers();
+location.reload();
 
   } catch (error) {
-
-    console.error("Помилка deleteDeveloper:", error);
-
+    console.error(error);
     alert("Не вдалося видалити розробника.");
-
   }
-
 }
 
 
@@ -304,12 +296,9 @@ fetch(`${url}/${developerId}`, {
 //! MODAL
 
 function toggleModalAddEditDeveloper() {
-
   modalAddEditDeveloper.classList.toggle("is-hidden");
   document.body.classList.toggle("no-scroll");
-
 }
-
 
 
 //! CONFIRM DELETE
@@ -325,8 +314,12 @@ function openConfirmModal(event) {
 
 }
 
-function closeModal() {
 
+function closeConfirmModal() {
+  confirmModal.classList.add("is-hidden");
+}
+
+function closeModal() {
   inputDeveloperName.value = "";
   inputDeveloperPosition.value = "";
   imgFormDeveloper.src = "/images/default.jpg";
@@ -335,5 +328,4 @@ function closeModal() {
   currentDeveloperName = "";
 
   toggleModalAddEditDeveloper();
-
 }
