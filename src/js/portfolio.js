@@ -15,21 +15,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/devlaptop-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/devlaptop-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/devlaptop-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/devlaptop-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/devlaptop-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/devlaptop-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/devlaptop-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/devlaptop-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/devlaptop-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/devlaptop-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/devlaptop-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/devlaptop-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/devlaptop-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/devlaptop-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/devlaptop-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/devlaptop-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/devlaptop-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/devlaptop-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/devlaptop-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/devlaptop-mobile-1x.jpg", import.meta.url).href
     }
   },
   {
@@ -38,21 +38,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/basketball-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/basketball-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/basketball-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/basketball-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/basketball-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/basketball-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/basketball-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/basketball-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/basketball-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/basketball-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/basketball-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/basketball-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/basketball-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/basketball-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/basketball-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/basketball-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/basketball-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/basketball-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/basketball-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/basketball-mobile-1x.jpg", import.meta.url).href
     }
   },
   {
@@ -61,21 +61,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/shark-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/shark-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/shark-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/shark-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/shark-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/shark-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/shark-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/shark-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/shark-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/shark-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/shark-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/shark-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/shark-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/shark-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/shark-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/shark-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/shark-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/shark-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/shark-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/shark-mobile-1x.jpg", import.meta.url).href
     }
   },
   {
@@ -84,21 +84,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/headphones-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/headphones-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/headphones-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/headphones-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/headphones-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/headphones-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/headphones-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/headphones-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/headphones-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/headphones-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/headphones-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/headphones-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/headphones-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/headphones-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/headphones-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/headphones-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/headphones-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/headphones-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/headphones-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/headphones-mobile-1x.jpg", import.meta.url).href
     }
   },
   {
@@ -107,21 +107,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/box-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/box-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/box-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/box-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/box-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/box-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/box-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/box-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/box-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/box-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/box-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/box-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/box-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/box-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/box-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/box-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/box-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/box-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/box-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/box-mobile-1x.jpg", import.meta.url).href
     }
   },
   {
@@ -130,21 +130,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/monitor-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/monitor-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/monitor-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/monitor-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/monitor-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/monitor-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/monitor-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/monitor-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/monitor-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/monitor-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/monitor-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/monitor-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/monitor-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/monitor-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/monitor-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/monitor-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/monitor-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/monitor-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/monitor-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/monitor-mobile-1x.jpg", import.meta.url).href
     }
   },
   {
@@ -153,21 +153,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/book-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/book-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/book-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/book-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/book-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/book-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/book-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/book-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/book-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/book-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/book-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/book-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/book-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/book-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/book-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/book-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/book-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/book-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/book-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/book-mobile-1x.jpg", import.meta.url).href
     }
   },
   {
@@ -176,21 +176,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/tag-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/tag-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/tag-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/tag-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/tag-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/tag-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/tag-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/tag-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/tag-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/tag-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/tag-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/tag-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/tag-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/tag-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/tag-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/tag-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/tag-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/tag-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/tag-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/tag-mobile-1x.jpg", import.meta.url).href
     }
   },
   {
@@ -199,21 +199,21 @@ const portfolioData = [
     description: "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
     images: {
       desktop: [
-        new URL("../images/laptop-desktop-1x.jpg", import.meta.url).href,
-        new URL("../images/laptop-desktop-2x.jpg", import.meta.url).href,
-        new URL("../images/laptop-desktop-3x.jpg", import.meta.url).href
+        new URL("/images/laptop-desktop-1x.jpg", import.meta.url).href,
+        new URL("/images/laptop-desktop-2x.jpg", import.meta.url).href,
+        new URL("/images/laptop-desktop-3x.jpg", import.meta.url).href
       ],
       tablet: [
-        new URL("../images/laptop-tablet-1x.jpg", import.meta.url).href,
-        new URL("../images/laptop-tablet-2x.jpg", import.meta.url).href,
-        new URL("../images/laptop-tablet-3x.jpg", import.meta.url).href
+        new URL("/images/laptop-tablet-1x.jpg", import.meta.url).href,
+        new URL("/images/laptop-tablet-2x.jpg", import.meta.url).href,
+        new URL("/images/laptop-tablet-3x.jpg", import.meta.url).href
       ],
       mobile: [
-        new URL("../images/laptop-mobile-1x.jpg", import.meta.url).href,
-        new URL("../images/laptop-mobile-2x.jpg", import.meta.url).href,
-        new URL("../images/laptop-mobile-3x.jpg", import.meta.url).href
+        new URL("/images/laptop-mobile-1x.jpg", import.meta.url).href,
+        new URL("/images/laptop-mobile-2x.jpg", import.meta.url).href,
+        new URL("/images/laptop-mobile-3x.jpg", import.meta.url).href
       ],
-      default: new URL("../images/laptop-mobile-1x.jpg", import.meta.url).href
+      default: new URL("/images/laptop-mobile-1x.jpg", import.meta.url).href
     }
   }
 ];

@@ -12,32 +12,32 @@ const dataCompanyList = [
   {
     width: 41,
     height: 46,
-    href: new URL("../images/symboldefs.svg#company1", import.meta.url).href,
+    href: new URL("/images/symboldefs.svg#company1", import.meta.url).href,
   },
   {
     width: 41,
     height: 46,
-    href: new URL("../images/symboldefs.svg#company2", import.meta.url).href,
+    href: new URL("/images/symboldefs.svg#company2", import.meta.url).href,
   },
   {
     width: 41,
     height: 46,
-    href: new URL("../images/symboldefs.svg#company3", import.meta.url).href,
+    href: new URL("/images/symboldefs.svg#company3", import.meta.url).href,
   },
   {
     width: 93,
     height: 43,
-    href: new URL("../images/symboldefs.svg#company4", import.meta.url).href,
+    href: new URL("/images/symboldefs.svg#company4", import.meta.url).href,
   },
   {
     width: 69,
     height: 43,
-    href: new URL("../images/symboldefs.svg#company5", import.meta.url).href,
+    href: new URL("/images/symboldefs.svg#company5", import.meta.url).href,
   },
   {
     width: 62,
     height: 45,
-    href: new URL("../images/symboldefs.svg#company6", import.meta.url).href,
+    href: new URL("/images/symboldefs.svg#company6", import.meta.url).href,
   },
 ];
 

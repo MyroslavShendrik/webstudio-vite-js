@@ -11,19 +11,19 @@ const workList = document.querySelector(".our-work-list");
 
 const dataWorkList = [
   {
-    src: new URL("../images/work1.jpg", import.meta.url).href,
+    src: new URL("/images/work1.jpg", import.meta.url).href,
     alt: "Робота за комп'ютером",
     title: "Десктопні додатки",
     width: 370,
   },
   {
-    src: new URL("../images/work2.jpg", import.meta.url).href,
+    src: new URL("/images/work2.jpg", import.meta.url).href,
     alt: "Робота за телефоном",
     title: "Мобільні додатки",
     width: 370,
   },
   {
-    src: new URL("../images/work3.jpg", import.meta.url).href,
+    src: new URL("/images/work3.jpg", import.meta.url).href,
     alt: "Робота за планшетом",
     title: "Дизайнерські рішення",
     width: 370,
