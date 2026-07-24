@@ -5,7 +5,7 @@ const socialLinks = [
   { id: "linkedin", url: "https://linkedin.com" },
 ];
 
-const spritePath = "/images/symboldefs.svg";
+const spritePath = "images/symboldefs.svg";
 
 const followList = document.querySelector(".follow-list");
 
