@@ -1,4 +1,4 @@
-import{H as t}from"./social-list-d9a96a1c.js";const i=[{name:"Студія",href:"./index.html",active:!1},{name:"Портфоліо",href:"./portfolio.html",active:!0},{name:"Контакти",href:"./contacts.html",active:!1}],s={links:i},o=`{{#each links}}
+import{H as t}from"./social-list-e2f4ecfd.js";const i=[{name:"Студія",href:"./index.html",active:!1},{name:"Портфоліо",href:"./portfolio.html",active:!0},{name:"Контакти",href:"./contacts.html",active:!1}],s={links:i},o=`{{#each links}}
   <li class="header-list__item">
     <a
       class="header-list__link {{#if active}}header-list__link--active{{/if}}"
