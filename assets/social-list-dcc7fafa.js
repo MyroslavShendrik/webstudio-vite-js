@@ -30,7 +30,7 @@ Expecting `+x.join(", ")+", got '"+(this.terminals_[k]||k)+"'":T="Parse error on
     {{/if}}
   </li>
 {{/each}}
-`,St=document.querySelector(".footer-address-list");console.log("footerList:",St);const wn=Cn.compile(En),xn=wn(Ln);St.innerHTML=xn;const Mn=[{id:"instagram",url:"https://instagram.com"},{id:"twitter",url:"https://twitter.com"},{id:"facebook",url:"https://facebook.com"},{id:"linkedin",url:"https://linkedin.com"}],On="/images/symboldefs.svg",An=document.querySelector(".follow-list");An.insertAdjacentHTML("beforeend",Mn.map(({id:e,url:t})=>`
+`,St=document.querySelector(".footer-address-list");console.log("footerList:",St);const wn=Cn.compile(En),xn=wn(Ln);St.innerHTML=xn;const Mn=[{id:"instagram",url:"https://instagram.com"},{id:"twitter",url:"https://twitter.com"},{id:"facebook",url:"https://facebook.com"},{id:"linkedin",url:"https://linkedin.com"}],On="images/symboldefs.svg",An=document.querySelector(".follow-list");An.insertAdjacentHTML("beforeend",Mn.map(({id:e,url:t})=>`
         <li class="follow-list__item">
           <a
             class="follow-list__link"
